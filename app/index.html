@@ -1,31 +1,95 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="uk">
 
 <head>
 
 	<meta charset="utf-8">
-	<title>OptimizedHTML 5</title>
-	<meta name="description" content="Startup HTML template OptimizedHTML 5">
+	<title>VYMIR Design Studio</title>
+	<meta name="description" content="Розробляємо дизайн інтер’єру житлових та громадських приміщень під ключ.">
 	<meta name="viewport" content="width=device-width">
 	<link rel="icon" href="img/favicon.png">
 	<meta property="og:image" content="img/dest/preview.jpg">
 	<link rel="stylesheet" href="css/app.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
 
 </head>
 
 <body>
 
-	<!-- CUSTOM HTML -->
+	<header class="main-header">
+		<div class="container-fluid">
+			<div class="main-header__wrap row align-items-center">
+				<div class="col">
+					<div class="main-header__left">
+						<a href="index.html" class="logo"><img src="images/dest/logo.png" alt="VYMIR Design Studio"></a>
+						<ul class="lang">
+							<li class="lang__item">UA</li>
+							<li class="lang__item"><a href="#">RU</a></li>
+							<li class="lang__item"><a href="#">EN</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-auto">
+					<div class="main-header__middle">
+						<nav class="menu">
+							<a href="index.html">Головна</a>
+							<a href="page-about.html">Про нас</a>
+							<a href="page-projects.html">Проекти</a>
+							<a href="page-services.html">Послуги</a>
+							<a href="page-how-works.html">Процес роботи</a>
+							<a href="page-contacts.html">Контакти</a>
+						</nav>
+					</div>
+				</div>
+				<div class="col">
+					<div class="main-header__right">
+						<div class="social">
+							<a class="social__link" href="#">
+								<svg class="icon icon-facebook"><use xlink:href="images/symbol-defs.svg#icon-facebook"></use></svg>
+							</a>
+							<a class="social__link" href="#">
+								<svg class="icon icon-instagram"><use xlink:href="images/symbol-defs.svg#icon-instagram"></use></svg>
+							</a>
+							<a class="social__link" href="#">
+								<svg class="icon icon-pinterest"><use xlink:href="images/symbol-defs.svg#icon-pinterest"></use></svg>
+							</a>
+							<a class="social__link" href="#">
+								<svg class="icon icon-behance"><use xlink:href="images/symbol-defs.svg#icon-behance"></use></svg>
+							</a>
+							<a class="social__link" href="#">
+								<svg class="icon icon-youtube"><use xlink:href="images/symbol-defs.svg#icon-youtube"></use></svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
 
-	<div class="container" style="max-width: 700px; margin: auto">
+	<section class="heroes">
+		<div class="heroes__slider swiper-slider">
+			<!-- Additional required wrapper -->
+			<div class="heroes__wrapper swiper-wrapper">
+				<!-- Slides -->
+				<div class="heroes__slide swiper-slide" style="background-image: url('images/dest/heroes-photo-01.jpg');">
+					<div class="heroes-content container">
+						<h2 class="">Grushevskogo apartment</h2>
+						<p>Квартира виконана матеріалами в стилі лофт: металом, бетоном і розкритим лаком цеглою. Головним завданням було продумати багатофункціональність простору квартири.</p>
+						<a href="page-project-single.html">Перейти до проекту</a>
+					</div>
+				</div>
+				<div class="heroes__slide swiper-slide">Slide 2</div>
+				<div class="heroes__slide swiper-slide">Slide 3</div>
+			</div>
+			<!-- If we need pagination -->
+			<div class="swiper-pagination"></div>
+		</div>
+	</section>
 
-		<img src="images/dest/preview.jpg" alt="Start HTML5 Template" width="100%"><br><br>
-		<h2>Welcome to startup HTML template OptimizedHTML 5!</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reprehenderit nulla alias expedita a qui, pariatur doloremque ipsa fugit laboriosam odio iure recusandae laborum delectus praesentium magni reiciendis voluptatem. Sed.</p>
 
-	</div>
 
 	<script src="js/app.min.js"></script>
+	<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 
 </body>
 </html>

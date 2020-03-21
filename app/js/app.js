@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-	// Custom JS
+	var heroesSwiper = new Swiper ('.heroes__slider', {
+		pagination: {
+			el: '.swiper-pagination',
+		},
+	})
 
 });

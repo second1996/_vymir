@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
 	var heroesSwiper = new Swiper ('.heroes__slider', {
 		// effect: 'fade',
 		allowTouchMove: false,
-		speed: 800,
+		speed: 1000,
 		autoplay: {
-			delay: 5000,
+			delay: 7000,
 			disableOnInteraction: false,
 		},
 		pagination: {

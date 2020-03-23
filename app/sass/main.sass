@@ -100,9 +100,16 @@
 	&__slider
 		position: relative
 		height: calc(100vh - 100px)
+		background: $dark
 		.swiper-slide-active
+			.heroes__title
+				animation: translateLeft40 1.5s
+			.heroes__descr
+				animation: translateLeft40 1.5s
+			.heroes__btn
+				animation: translateLeft100 1.5s
 			.heroes__photo
-				animation: zoom-bg 20s 0.5s infinite alternate
+				transform: scale(1)
 		.swiper-pagination
 			display: flex
 			align-items: center
@@ -119,6 +126,15 @@
 	&__slide
 		position: relative
 		overflow: hidden
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: 1
+			background: rgba(#222, 0.85)
 	&__photo
 		position: absolute
 		top: 0
@@ -128,15 +144,8 @@
 		background-repeat: no-repeat
 		background-size: cover
 		background-position: center center
-		&:before
-			content: ''
-			position: absolute
-			top: 0
-			left: 0
-			right: 0
-			bottom: 0
-			z-index: 0
-			background: rgba(#222, 0.85)
+		transform: scale(1.15)
+		transition: transform 6s
 	&__content
 		position: relative
 		top: 50%
@@ -144,21 +153,28 @@
 		text-align: center
 		transform: translateY(-50%)
 	&__title
+		overflow: hidden
 		color: $white
 		font-size: 72px
 		font-weight: 800
 		line-height: 1.25
 		text-transform: uppercase
+		transition: transform 1s ease, opacity 2s ease
+		will-change: transform, opacity
 	&__descr
 		max-width: 775px
 		margin: 0 auto
 		color: #eee
 		font-size: 18px
 		font-weight: 300
+		transition: transform 1.5s ease, opacity 2s ease
+		will-change: transform, opacity
 	&__btn
 		margin-top: 50px
 		border-color: $white
 		color: $white
+		transition: transform 3s ease, opacity 2s ease
+		will-change: transform, opacity
 		&:after
 			background: $white
 		&:hover
@@ -167,7 +183,20 @@
 			&:after
 				background: $dark
 
-
+@keyframes translateLeft40
+	from
+		transform: translateX(40%)
+		opacity: 0
+	to
+		transform: translateX(0%)
+		opacity: 1
+@keyframes translateLeft100
+	from
+		transform: translateX(100%)
+		opacity: 0
+	to
+		transform: translateX(0%)
+		opacity: 1
 
 // HOME PAGE: About us
 .h-about

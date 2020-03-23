@@ -28,7 +28,7 @@
 							<li class="lang__item"><a href="#">EN</a></li>
 						</ul>
 					</div>
-				</div>
+				</div><!-- /.col -->
 				<div class="col-auto">
 					<div class="main-header__middle">
 						<nav class="menu">
@@ -40,30 +40,20 @@
 							<a href="page-contacts.html">Контакти</a>
 						</nav>
 					</div>
-				</div>
+				</div><!-- /.col -->
 				<div class="col">
 					<div class="main-header__right">
 						<div class="social">
-							<a class="social__link" href="#">
-								<svg class="icon icon-facebook"><use xlink:href="images/symbol-defs.svg#icon-facebook"></use></svg>
-							</a>
-							<a class="social__link" href="#">
-								<svg class="icon icon-instagram"><use xlink:href="images/symbol-defs.svg#icon-instagram"></use></svg>
-							</a>
-							<a class="social__link" href="#">
-								<svg class="icon icon-pinterest"><use xlink:href="images/symbol-defs.svg#icon-pinterest"></use></svg>
-							</a>
-							<a class="social__link" href="#">
-								<svg class="icon icon-behance"><use xlink:href="images/symbol-defs.svg#icon-behance"></use></svg>
-							</a>
-							<a class="social__link" href="#">
-								<svg class="icon icon-youtube"><use xlink:href="images/symbol-defs.svg#icon-youtube"></use></svg>
-							</a>
+							<a href="https://www.facebook.com/vymir.design.studio/" rel="noopener nofollow" target="_blank"><svg class="icon icon-facebook"><use xlink:href="images/symbol-defs.svg#icon-facebook"></use></svg></a>
+							<a href="https://www.instagram.com/vymir_design/" rel="noopener nofollow" target="_blank"><svg class="icon icon-instagram"><use xlink:href="images/symbol-defs.svg#icon-instagram"></use></svg></a>
+							<a href="#" rel="noopener nofollow" target="_blank"><svg class="icon icon-pinterest"><use xlink:href="images/symbol-defs.svg#icon-pinterest"></use></svg></a>
+							<a href="https://www.behance.net/vymir_design" rel="noopener nofollow" target="_blank"><svg class="icon icon-behance"><use xlink:href="images/symbol-defs.svg#icon-behance" rel="noopener nofollow" target="_blank"></use></svg></a>
+							<a href="#" rel="noopener nofollow" target="_blank"><svg class="icon icon-youtube"><use xlink:href="images/symbol-defs.svg#icon-youtube"></use></svg></a>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.container-fluid -->
 	</header>
 
 	<section class="heroes">
@@ -71,22 +61,202 @@
 			<!-- Additional required wrapper -->
 			<div class="heroes__wrapper swiper-wrapper">
 				<!-- Slides -->
-				<div class="heroes__slide swiper-slide" style="background-image: url('images/dest/heroes-photo-01.jpg');">
-					<div class="heroes-content container">
-						<h2 class="">Grushevskogo apartment</h2>
-						<p>Квартира виконана матеріалами в стилі лофт: металом, бетоном і розкритим лаком цеглою. Головним завданням було продумати багатофункціональність простору квартири.</p>
-						<a href="page-project-single.html">Перейти до проекту</a>
+				<div class="heroes__slide swiper-slide">
+					<div class="heroes__content container">
+						<h2 class="heroes__title">Grushevskogo apartment</h2>
+						<p class="heroes__descr">Квартира виконана матеріалами в стилі лофт: металом, бетоном і розкритим лаком цеглою. Головним завданням було продумати багатофункціональність простору квартири.</p>
+						<a class="heroes__btn btn" href="page-project-single.html">Перейти до проекту</a>
 					</div>
-				</div>
-				<div class="heroes__slide swiper-slide">Slide 2</div>
-				<div class="heroes__slide swiper-slide">Slide 3</div>
-			</div>
-			<!-- If we need pagination -->
+					<div class="heroes__photo swiper-lazy" data-background="images/dest/heroes-photo-01.jpg"></div>
+				</div><!-- /.heroes__slide -->
+				
+			</div><!-- /.heroes__wrapper -->
 			<div class="swiper-pagination"></div>
-		</div>
+		</div><!-- /.heroes__slider -->
 	</section>
 
 
+	<section class="section h-about">
+		<div class="container">
+			<div class="row">
+				<div class="col-6">
+					<div class="section-suptitle">About Us</div>
+					<h2 class="h-about__title">We are VYMIR DESIGN. Architecture studio from Ukraine</h2>
+					<div class="h-about__descr">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia magna vel molestie faucibus. Donec auctor et urnaLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia magna vel molestie faucibus. Cras lacinia magna vel molestie faucibus.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia magna vel molestie faucibus. Cras lacinia magna vel molestie faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					</div>
+					<a href="page-about.html" class="h-about__btn btn">Детальніше</a>
+				</div><!-- /.col -->
+				<div class="col-6">
+					<div class="h-about__photo">
+						<img src="https://www.insidecor.cz/public/content-images/cz/article/dsc0412-big_big.jpg" alt="">
+					</div>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	</section>
+
+	<section class="section h-projects">
+		<div class="container">
+			<div class="row align-items-end">
+				<div class="col">
+					<div class="section-suptitle">Our Works</div>
+					<h2 class="section-title">Останні проекти</h2>
+					<p class="section-descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia magna vel molestie faucibus. </p>
+				</div>
+				<div class="col-auto">
+					<a href="page-projects.html" class="btn">Всі проекти</a>
+				</div>
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+		<div class="container-fluid">
+			<div class="section-wrap">
+				<div class="row">
+					<div class="col-4 project">
+						<div class="project__wrap">
+							<h3 class="project__meta">
+								<span class="title">Modern Apartments Modern Apartments | 02 Part 2</span>
+								<span class="location">Україна, Івано-Франківськ</span>
+							</h3>
+						</div>
+						<a href="page-project-single.html" class="project__link">Переглянути проект</a>
+						<div class="project__photo">
+							<img src="images/dest/project-photo-01.jpg" alt="">
+						</div>
+					</div><!-- /.project -->
+					<div class="col-4 project">
+						<div class="project__wrap">
+							<h3 class="project__meta">
+								<span class="title">Bono Country House</span>
+								<span class="location">Україна, Івано-Франківськ</span>
+							</h3>
+						</div>
+						<a href="page-project-single.html" class="project__link">Переглянути проект</a>
+						<div class="project__photo">
+							<img src="images/dest/project-photo-02.jpg" alt="">
+						</div>
+					</div><!-- /.project -->
+					<div class="col-4 project">
+						<div class="project__wrap">
+							<h3 class="project__meta">
+								<span class="title">Downside Up House</span>
+								<span class="location">Україна, Одеса</span>
+							</h3>
+						</div>
+						<a href="page-project-single.html" class="project__link">Переглянути проект</a>
+						<div class="project__photo">
+							<img src="images/dest/project-photo-03.jpg" alt="">
+						</div>
+					</div><!-- /.project -->
+					<div class="col-4 project">
+						<div class="project__wrap">
+							<h3 class="project__meta">
+								<span class="title">A Viewpoint To Talamanca</span>
+								<span class="location">Україна, Івано-Франківськ</span>
+							</h3>
+						</div>
+						<a href="page-project-single.html" class="project__link">Переглянути проект</a>
+						<div class="project__photo">
+							<img src="images/dest/project-photo-03.jpg" alt="">
+						</div>
+					</div><!-- /.project -->
+					<div class="col-4 project">
+						<div class="project__wrap">
+							<h3 class="project__meta">
+								<span class="title">Techiner Studio</span>
+								<span class="location">Україна, Київ</span>
+							</h3>
+						</div>
+						<a href="page-project-single.html" class="project__link">Переглянути проект</a>
+						<div class="project__photo">
+							<img src="images/dest/project-photo-02.jpg" alt="">
+						</div>
+					</div><!-- /.project -->
+					<div class="col-4 project">
+						<div class="project__wrap">
+							<h3 class="project__meta">
+								<span class="title">Brilliant House</span>
+								<span class="location">Україна, Чернівці</span>
+							</h3>
+						</div>
+						<a href="page-project-single.html" class="project__link">Переглянути проект</a>
+						<div class="project__photo">
+							<img src="images/dest/project-photo-01.jpg" alt="">
+						</div>
+					</div><!-- /.project -->
+				</div><!-- /.row -->
+			</div><!-- /.section-wrap -->
+		</div><!-- /.container-fluid -->
+	</section>
+
+	<footer class="main-footer">
+		<div class="container cta">
+			<div class="row">
+				<div class="col-6">
+					<div class="section-suptitle">Let's start</div>
+					<h4 class="section-title">Створимо проект разом?</h4>
+					<p class="section-descr">Залиште свій телефон, ми вам зателефонуємо та поспілкуємось щодо вашого проєкту.</p>
+				</div><!-- /.col -->
+				<div class="col-6">
+					<form class="cta__form form">
+						<div class="row">
+							<div class="col-6">
+								<input type="text" class="form-control" placeholder="Ваше ім'я">
+							</div>
+							<div class="col-6">
+								<input type="text" class="form-control" placeholder="+38 (___) __-__-___">
+							</div>
+							<div class="col">
+								<span class="form-descr">Натискаючи на кнопку, я підтверджую свою згоду з політикою конфіденційності</span>
+							</div>
+							<div class="col-auto">
+								<button type="submit" class="btn">Надіслати</button>
+							</div>
+						</div>
+					</form>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.container, cta -->
+		<div class="footer" style="background-image: url('images/dest/heroes-photo-01.jpg');">
+			<div class="container">
+				<div class="row justify-content-between">
+					<div class="col-auto">
+						<img src="images/dest/white-logo.png" alt="VYMIR Design Studio" class="footer__logo">
+						<p class="footer__descr">VYMIR DESIGN STUDIO — креативна і повна натхненням команда, яка прагне втілити в життя нові тенденції в сфері дизайну та архітектури. Розробляємо дизайн інтер’єру житлових та громадських приміщень під ключ.</p>
+						<div class="footer__social">
+							<a href="https://www.facebook.com/vymir.design.studio/" rel="noopener nofollow" target="_blank"><svg class="icon icon-facebook"><use xlink:href="images/symbol-defs.svg#icon-facebook"></use></svg></a>
+							<a href="https://www.instagram.com/vymir_design/" rel="noopener nofollow" target="_blank"><svg class="icon icon-instagram"><use xlink:href="images/symbol-defs.svg#icon-instagram"></use></svg></a>
+							<a href="#" rel="noopener nofollow" target="_blank"><svg class="icon icon-pinterest"><use xlink:href="images/symbol-defs.svg#icon-pinterest"></use></svg></a>
+							<a href="https://www.behance.net/vymir_design" rel="noopener nofollow" target="_blank"><svg class="icon icon-behance"><use xlink:href="images/symbol-defs.svg#icon-behance" rel="noopener nofollow" target="_blank"></use></svg></a>
+							<a href="#" rel="noopener nofollow" target="_blank"><svg class="icon icon-youtube"><use xlink:href="images/symbol-defs.svg#icon-youtube"></use></svg></a>
+						</div>
+					</div>
+					<div class="col-auto">
+						<h5 class="footer__title">Швидкі посилання</h5>
+						<ul class="footer__menu">
+							<li><a href="page-about.html">Про нас</a></li>
+							<li><a href="page-projects.html">Проекти</a></li>
+							<li><a href="page-services.html">Послуги</a></li>
+							<li><a href="page-how-works.html">Процес роботи</a></li>
+							<li><a href="page-contacts.html">Контакти</a></li>
+						</ul>
+					</div>
+					<div class="col-3">
+						<h5 class="footer__title">Контакти</h5>
+						<ul class="footer__contacts">
+							<li><b>Адреса:</b> м. Івано-Франківськ, вул. Січових Стрільців, 13 (8 поверх)</li>
+							<li><b>E-mail:</b> <a href="mailto:vymir.desgin@gmail.com" title="Написати листа на нашу адресу" target="_blank">vymir.design@gmail.com</a></li>
+							<li><b>Телефон / Viber / WhatsApp / Telegram:</b><br>
+								<div class="phone"><a href="tel:+380501024286" title="Зателефонувати">+38 (050) 10-24-286</a></div>
+								<div class="phone"><a href="tel:+380995287661" title="Зателефонувати">+38 (099) 52-87-661</a></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div><!-- /.footer -->
+	</footer>
 
 	<script src="js/app.min.js"></script>
 	<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>

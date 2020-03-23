@@ -1,13 +1,15 @@
 // USER VARIABLES SECTION
 
 $accent: #000 // Accent Color
+$dark: #222
+$border: #eee
+$white: #fff
+$gray: #aeaeae
+$trsp: transparent
 $fontsize: 16px // Body Font Size
 $textcolor: #777 // Text Color
 $system: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
 $roboto: Roboto, sans-serif // Roboto Font Family
-$border: #eee
-$white: #fff
-$gray: #aeaeae
 
 // Bootstrap compatible gutter variable => $gutter
 
@@ -24,14 +26,15 @@ $grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1390px)
 		font-family: $fname
 		font-style: $fstyle
 		font-weight: $fweight
-		// font-display: swap // Uncomment to initially display system fonts
+		font-display: swap // Uncomment to initially display system fonts
 		src: local($fname), url($furl) format('woff2')
 
 
-@include font('Roboto', normal, 200, '../fonts/roboto-light-webfont.woff2')
-@include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2')
-@include font('Roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2')
-@include font('Roboto', normal, 800, '../fonts/roboto-black-webfont.woff2')
+@include font('Roboto', normal, 300, '../fonts/roboto-light.woff2')
+@include font('Roboto', normal, 400, '../fonts/roboto-regular.woff2')
+@include font('Roboto', normal, 500, '../fonts/roboto-medium.woff2')
+@include font('Roboto', normal, 700, '../fonts/roboto-bold.woff2')
+@include font('Roboto', normal, 800, '../fonts/roboto-black.woff2')
 
 
 // IMPORT SECTION
@@ -45,7 +48,8 @@ $grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1390px)
 // GENERAL DOCUMENT STYLES
 
 ::placeholder
-	color: #666
+	color: $textcolor
+	font-weight: 300
 
 ::selection
 	background-color: $accent
@@ -62,22 +66,36 @@ body
 	position: relative
 	overflow-x: hidden
 	min-width: 320px
-	font-family: $roboto
+	font-family: 'Roboto', sans-serif
 	font-size: $fontsize
 	color: $textcolor
 	line-height: 1.65
-
-ul
-	margin: 0
-	padding-left: 0
-	list-style: none
 
 a
 	color: #222
 	transition: .3s ease
 	&:hover
 		color: #000
+		text-decoration: none
 
+ul
+	margin: 0
+	padding-left: 0
+	list-style: none
+
+p
+	margin-bottom: 10px
+	font-weight: 300
+
+img
+	user-drag: none
+	user-select: none
+
+.container-fluid
+	padding-left: 100px
+	padding-right: 100px
+
+// SVG Icon
 .icon
 	display: inline-block
 	width: 1em
@@ -86,3 +104,78 @@ a
 	stroke: currentColor
 	fill: currentColor
 
+// Buttons
+.btn
+	position: relative
+	display: inline-block
+	padding-left: 35px
+	padding-right: 70px
+	border: 1px solid #dadada
+	background: $trsp
+	color: $dark
+	font-size: 12px
+	line-height: 54px
+	letter-spacing: 1px
+	text-transform: uppercase
+	transition: .3s ease
+	&:after
+		content: ''
+		position: absolute
+		top: 50%
+		right: 35px
+		display: inline-block
+		width: 15px
+		height: 1px
+		background: $dark
+		transition: .3s ease
+	&:hover
+		background: $accent
+		color: $white
+		text-decoration: none
+		&:after
+			width: 25px
+			background: $white
+
+// Forms
+.form
+	&-control
+		width: 100%
+		margin-bottom: 20px
+		padding: 22px 30px
+		border: 0
+		border-bottom: 1px solid $border
+		line-height: 1
+	&-descr
+		font-weight: 300
+
+// Section
+.section
+	margin: 160px 0
+	&-wrap
+		margin-top: 60px
+	&-suptitle
+		margin-bottom: 10px
+		color: $gray
+		font-size: 18px
+		font-weight: 300
+		text-transform: uppercase
+	&-title
+		margin-bottom: 0
+		color: #000
+		font-size: 42px
+		font-weight: 700
+		line-height: 1.16
+		text-transform: uppercase
+	&-descr
+		max-width: 600px
+		margin-top: 20px
+		margin-bottom: 0
+
+
+
+// KEYFRAMES
+@keyframes zoom-bg
+	from
+		transform: scale(1,1)
+	to
+		transform: scale(1.25,1.25)

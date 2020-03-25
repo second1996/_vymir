@@ -16,8 +16,8 @@ $roboto: Roboto, sans-serif // Roboto Font Family
 $grid-gutter-width: 20px
 $gutter: $grid-gutter-width
 
-$container-max-widths: (sm: 540px, md: 720px, lg: 1140px, xl: 1310px)
-$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1390px)
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px, xxl: 1310px)
+$grid-breakpoints: (xss: 0, xs: 375px, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1390px)
 
 // FONTS LOAD SECTION
 
@@ -72,6 +72,17 @@ body
 	color: $textcolor
 	line-height: 1.65
 
+h2
+	font-size: 42px
+	+media-breakpoint-down(xl)
+		font-size: 38px
+	+media-breakpoint-down(md)
+		font-size: 32px
+	+media-breakpoint-down(sm)
+		font-size: 28px
+	+media-breakpoint-down(xs)
+		font-size: 26px
+
 a
 	color: #222
 	transition: .3s ease
@@ -92,9 +103,13 @@ img
 	user-drag: none
 	user-select: none
 
+.container
+	padding-left: 20px
+	padding-right: 20px
 .container-fluid
-	padding-left: 100px
-	padding-right: 100px
+	max-width: 1720px
+	padding-left: 20px
+	padding-right: 20px
 
 // SVG Icon
 .icon
@@ -136,6 +151,12 @@ img
 		&:after
 			width: 25px
 			background: $white
+	+media-breakpoint-down(xs)
+		padding-left: 25px
+		padding-right: 60px
+		line-height: 50px
+		&:after
+			right: 25px
 
 // Forms
 .form
@@ -143,19 +164,32 @@ img
 		width: 100%
 		margin-bottom: 20px
 		padding: 22px 30px
+		border-radius: 0
 		border: 0
 		border-bottom: 1px solid $border
 		line-height: 1
+		+media-breakpoint-down(xs)
+			padding: 15px 25px
 	&-descr
+		margin-top: 16px
+		margin-bottom: 0
 		font-weight: 300
+		+media-breakpoint-down(md)
+			font-size: 15px
+	&-btn
+		margin-top: 16px
 
 // Section
 .section
 	margin: 160px 0
+	+media-breakpoint-down(md)
+		margin: 130px 0
+	+media-breakpoint-down(sm)
+		margin: 100px 0
 	&-wrap
-		margin-top: 60px
+		margin-top: 50px
 	&-suptitle
-		margin-bottom: 10px
+		margin-bottom: 2px
 		color: $gray
 		font-size: 18px
 		font-weight: 300
@@ -167,10 +201,23 @@ img
 		font-weight: 700
 		line-height: 1.16
 		text-transform: uppercase
+		+media-breakpoint-down(xl)
+			font-size: 38px
+		+media-breakpoint-down(md)
+			font-size: 32px
+		+media-breakpoint-down(sm)
+			font-size: 28px
+		+media-breakpoint-down(xs)
+			font-size: 26px
 	&-descr
 		max-width: 600px
-		margin-top: 20px
+		margin-top: 12px
 		margin-bottom: 0
+		+media-breakpoint-down(md)
+			max-width: 100%
+	&-btn
+		+media-breakpoint-down(sm)
+			margin-top: 20px
 
 
 

@@ -11,6 +11,7 @@
 	<meta property="og:image" content="img/dest/preview.jpg">
 	<link rel="stylesheet" href="css/app.min.css">
 	<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+	<!-- <link rel="stylesheet" href="libs/OverlayScrollbars-master/css/OverlayScrollbars.min.css"> -->
 
 </head>
 
@@ -18,19 +19,24 @@
 
 	<header class="main-header">
 		<div class="container-fluid">
-			<div class="main-header__wrap row align-items-center">
-				<div class="col">
+			<div class="main-header__wrap row align-items-center justify-content-between">
+				<div class="col-xl col-auto order-0 order-sm-1 order-xl-0">
 					<div class="main-header__left">
 						<a href="index.html" class="logo"><img src="images/dest/logo.png" alt="VYMIR Design Studio"></a>
-						<ul class="lang">
+						<ul class="lang d-none d-xl-block">
 							<li class="lang__item">UA</li>
 							<li class="lang__item"><a href="#">RU</a></li>
 							<li class="lang__item"><a href="#">EN</a></li>
 						</ul>
 					</div>
 				</div><!-- /.col -->
-				<div class="col-auto">
+				<div class="col-auto col-sm col-xl-auto order-0 order-xl-1">
 					<div class="main-header__middle">
+						<button class="humb">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
 						<nav class="menu">
 							<a href="index.html">Головна</a>
 							<a href="page-about.html">Про нас</a>
@@ -41,7 +47,7 @@
 						</nav>
 					</div>
 				</div><!-- /.col -->
-				<div class="col">
+				<div class="col order-2 d-none d-sm-block">
 					<div class="main-header__right">
 						<div class="social">
 							<a href="https://www.facebook.com/vymir.design.studio/" rel="noopener nofollow" target="_blank"><svg class="icon icon-facebook"><use xlink:href="images/symbol-defs.svg#icon-facebook"></use></svg></a>
@@ -96,12 +102,12 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="section-suptitle wow fadeInUp">About Us</div>
-					<h2 class="h-about__title wow fadeInUp">We are VYMIR DESIGN. Architecture studio from Ukraine</h2>
-					<div class="h-about__descr wow fadeInUp">
+					<h2 class="h-about__title wow fadeInUp" data-wow-delay="0.1s">We are VYMIR DESIGN. Architecture studio from Ukraine</h2>
+					<div class="h-about__descr wow fadeInUp" data-wow-delay="0.2s">
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia magna vel molestie faucibus. Donec auctor et urnaLorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia magna vel molestie faucibus. Cras lacinia magna vel molestie faucibus.</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia magna vel molestie faucibus. Cras lacinia magna vel molestie faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 					</div>
-					<a href="page-about.html" class="h-about__btn btn wow fadeInUp">Детальніше</a>
+					<a href="page-about.html" class="h-about__btn btn wow fadeInUp" data-wow-delay="0.3s">Детальніше</a>
 				</div><!-- /.col -->
 				<div class="col-lg-6 d-none d-lg-block wow fadeInUp">
 					<div class="h-about__photo wow fadeInUp">
@@ -128,10 +134,10 @@
 		<div class="container-fluid">
 			<div class="section-wrap">
 				<div class="row">
-					<div class="col-md-6 col-xl-4 project wow fadeInUp">
+					<div class="col-md-6 col-xl-4 project wow fadeInUp" data-wow-delay="0s">
 						<div class="project__wrap">
 							<h3 class="project__meta">
-								<span class="title">Modern Apartments Modern Apartments | 02 Part 2</span>
+								<span class="title">Modern Apartments | 02 Part 2</span>
 								<span class="location">Україна, Івано-Франківськ</span>
 							</h3>
 						</div>
@@ -140,7 +146,7 @@
 							<img src="images/dest/project-photo-01.jpg" alt="">
 						</div>
 					</div><!-- /.project -->
-					<div class="col-md-6 col-xl-4 project wow fadeInUp">
+					<div class="col-md-6 col-xl-4 project wow fadeInUp" data-wow-delay="0.1s">
 						<div class="project__wrap">
 							<h3 class="project__meta">
 								<span class="title">Bono Country House</span>
@@ -152,7 +158,7 @@
 							<img src="images/dest/project-photo-02.jpg" alt="">
 						</div>
 					</div><!-- /.project -->
-					<div class="col-md-6 col-xl-4 project wow fadeInUp">
+					<div class="col-md-6 col-xl-4 project wow fadeInUp" data-wow-delay="0.2s">
 						<div class="project__wrap">
 							<h3 class="project__meta">
 								<span class="title">Downside Up House</span>
@@ -164,7 +170,7 @@
 							<img src="images/dest/project-photo-03.jpg" alt="">
 						</div>
 					</div><!-- /.project -->
-					<div class="col-md-6 col-xl-4 project wow fadeInUp">
+					<div class="col-md-6 col-xl-4 project wow fadeInUp" data-wow-delay="0.3s">
 						<div class="project__wrap">
 							<h3 class="project__meta">
 								<span class="title">A Viewpoint To Talamanca</span>
@@ -173,10 +179,10 @@
 						</div>
 						<a href="page-project-single.html" class="project__link">Переглянути проект</a>
 						<div class="project__photo">
-							<img src="images/dest/project-photo-03.jpg" alt="">
+							<img src="https://dekoratorium.com.ua/wp-content/uploads/2019/04/shutterstock_473490250.jpg" alt="">
 						</div>
 					</div><!-- /.project -->
-					<div class="col-md-6 col-xl-4 project wow fadeInUp">
+					<div class="col-md-6 col-xl-4 project wow fadeInUp" data-wow-delay="0.4s">
 						<div class="project__wrap">
 							<h3 class="project__meta">
 								<span class="title">Techiner Studio</span>
@@ -185,10 +191,10 @@
 						</div>
 						<a href="page-project-single.html" class="project__link">Переглянути проект</a>
 						<div class="project__photo">
-							<img src="images/dest/project-photo-02.jpg" alt="">
+							<img src="https://i.pinimg.com/originals/5d/23/6e/5d236e4326fa0959a4037b4fa297155a.jpg" alt="">
 						</div>
 					</div><!-- /.project -->
-					<div class="col-md-6 col-xl-4 project wow fadeInUp">
+					<div class="col-md-6 col-xl-4 project wow fadeInUp" data-wow-delay="0.5s">
 						<div class="project__wrap">
 							<h3 class="project__meta">
 								<span class="title">Brilliant House</span>
@@ -197,7 +203,7 @@
 						</div>
 						<a href="page-project-single.html" class="project__link">Переглянути проект</a>
 						<div class="project__photo">
-							<img src="images/dest/project-photo-01.jpg" alt="">
+							<img src="https://www.hgdesign.com.ua/wp-content/uploads/2019/07/interior-design-living-room-6-1170x613.jpg" alt="">
 						</div>
 					</div><!-- /.project -->
 				</div><!-- /.row -->
@@ -206,23 +212,25 @@
 	</section>
 
 	<footer class="main-footer">
-		<div class="container cta wow fadeInUp">
+		<div class="container cta">
 			<div class="row">
 				<div class="col-xl-6">
-					<div class="row">
-						<div class="col-12">
-							<div class="section-suptitle">Let's start</div>
-						</div>
-						<div class="col-lg-6 col-xl-12">
-							<h4 class="section-title">Створимо проект разом?</h4>
-						</div>
-						<div class="col-lg-6 col-xl-12">
-							<p class="section-descr">Залиште свій телефон, ми вам зателефонуємо та поспілкуємось щодо вашого проекту.</p>
+					<div class="cta__head wow fadeInUp" data-wow-delay="0.15s">
+						<div class="row">
+							<div class="col-12">
+								<div class="section-suptitle">Let's start</div>
+							</div>
+							<div class="col-lg-6 col-xl-12">
+								<h4 class="section-title">Створимо проект разом?</h4>
+							</div>
+							<div class="col-lg-6 col-xl-12">
+								<p class="section-descr">Залиште свій телефон, ми вам зателефонуємо та поспілкуємось щодо вашого проекту.</p>
+							</div>
 						</div>
 					</div>
 				</div><!-- /.col -->
 				<div class="col-xl-6">
-					<form class="cta__form form">
+					<form class="cta__form form wow fadeInUp" data-wow-delay="0.3s">
 						<div class="row">
 							<div class="col-sm-6">
 								<input type="text" class="form-control" placeholder="Ваше ім'я">
@@ -281,9 +289,50 @@
 		</div><!-- /.footer -->
 	</footer>
 
+	<div class="m-menu">
+		<div class="m-menu__wrap">
+			<button class="m-menu__close">
+				<span></span>
+				<span></span>
+			</button>
+			<div class="m-menu__languages">
+				<ul class="lang">
+					<li class="lang__item">UKR</li>
+					<li class="lang__item"><a href="#">RUS</a></li>
+					<li class="lang__item"><a href="#">ENG</a></li>
+				</ul>
+			</div>
+			<div class="m-menu__nav">
+				<ul class="nav">
+					<li><a href="index.html">Головна</a></li>
+					<li><a href="page-about.html">Про нас</a></li>
+					<li><a href="page-projects.html">Проекти</a></li>
+					<li><a href="page-services.html">Послуги</a></li>
+					<li><a href="page-how-works.html">Процес роботи</a></li>
+					<li><a href="page-contacts.html">Контакти</a></li>
+				</ul>
+			</div>
+			<div class="m-menu__footer">
+				<div class="social">
+					<a href="https://www.facebook.com/vymir.design.studio/" rel="noopener nofollow" target="_blank"><svg class="icon icon-facebook"><use xlink:href="images/symbol-defs.svg#icon-facebook"></use></svg></a>
+					<a href="https://www.instagram.com/vymir_design/" rel="noopener nofollow" target="_blank"><svg class="icon icon-instagram"><use xlink:href="images/symbol-defs.svg#icon-instagram"></use></svg></a>
+					<a href="#" rel="noopener nofollow" target="_blank"><svg class="icon icon-pinterest"><use xlink:href="images/symbol-defs.svg#icon-pinterest"></use></svg></a>
+					<a href="https://www.behance.net/vymir_design" rel="noopener nofollow" target="_blank"><svg class="icon icon-behance"><use xlink:href="images/symbol-defs.svg#icon-behance" rel="noopener nofollow" target="_blank"></use></svg></a>
+					<a href="#" rel="noopener nofollow" target="_blank"><svg class="icon icon-youtube"><use xlink:href="images/symbol-defs.svg#icon-youtube"></use></svg></a>
+				</div>
+				<div class="copy">
+					<p>© VYMIR Design Studio 2020. <br>Всі права захищені.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<script src="js/app.min.js"></script>
 	<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 	<script src="https://www.delac.io/wow/dist/wow.min.js"></script>
+	<!-- <script src="libs/OverlayScrollbars-master/js/OverlayScrollbars.min.js"></script> -->
+	<!-- <script>var instance = OverlayScrollbars(document.querySelector('.m-menu__nav'), { /* your options */ }); </script> -->
+
 
 </body>
 </html>

@@ -1,10 +1,168 @@
 @import config
 
+// MOBILE MENU
+.m-menu
+	position: fixed
+	visibility: hidden
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 999
+	max-width: 400px
+	width: 100%
+	transform: translateX(-100%)
+	transition: .5s cubic-bezier(0.5, 1, 0.89, 1)
+	+media-breakpoint-down(xs)
+		transform: translateX(100%)
+	&--opened
+		visibility: visible
+		transform: translateX(0)
+		.m-menu__languages
+			animation: fadeInDown 1s both
+		.m-menu__nav
+			.nav
+				li
+					animation: fadeInLeft 1s both
+		.m-menu__footer
+			animation: fadeInUp 2s both 1s
+	&__wrap
+		position: relative
+		display: flex
+		flex-direction: column
+		height: 100vh
+		padding: 100px 50px 50px
+		background: $dark
+		+media-breakpoint-down(xs)
+			padding: 26px 40px 40px
+	&__close
+		position: absolute
+		top: 30px
+		left: 46px
+		width: 36px
+		height: 36px
+		padding: 0
+		border-radius: 0
+		border: 0
+		background: $trsp
+		+media-breakpoint-down(xs)
+			top: 20px
+			left: auto
+			right: 20px
+		span
+			position: absolute
+			display: block
+			width: 40px
+			height: 2px
+			background: $white
+			&:nth-child(1)
+				transform: rotate(45deg)
+			&:nth-child(2)
+				transform: rotate(-45deg)
+			+media-breakpoint-down(xs)
+				width: 34px
+	&__languages
+		margin-bottom: 40px
+		+media-breakpoint-down(xs)
+			margin-bottom: 30px
+		.lang
+			&__item
+				display: inline-block
+				color: $white
+				font-size: 15px
+				line-height: 1
+				&:not(:first-child)
+					margin-left: 10px
+				a
+					position: relative
+					color: rgba($white, 0.4)
+					font-size: 15px
+					&:before
+						content: ''
+						position: absolute
+						top: 100%
+						left: 0
+						width: 100%
+						height: 1px
+						background: $white
+						opacity: 0
+						transform: scaleX(0)
+						transition: .3s ease
+					&:hover
+						color: $white
+						text-decoration: none
+						&:before
+							transform: scaleX(1)
+							opacity: 1
+	&__nav
+		overflow-x: hidden
+		overflow-y: auto
+		.nav
+			display: flex
+			flex-direction: column
+			@for $i from 1 through 10
+				li:nth-child(#{$i}),
+					animation-delay: $i*0.2s
+			li
+				&:not(:first-child)
+					margin-top: 16px
+					+media-breakpoint-down(xs)
+						margin-top: 6px
+				a
+					color: rgba($white, 0.4)
+					font-size: 26px
+					font-weight: 500
+					text-transform: uppercase
+					&:hover
+						color: $white
+					+media-breakpoint-down(xs)
+						font-size: 32px
+	&__footer
+		margin-top: auto
+		padding-top: 40px
+		+media-breakpoint-down(xs)
+			padding-top: 30px
+		.social
+			display: flex
+			a
+				position: relative
+				color: $white
+				line-height: 1
+				&:not(:first-child)
+					margin-left: 20px
+				&:after
+					content: ''
+					position: absolute
+					top: 100%
+					left: 0
+					width: 100%
+					height: 1px
+					margin-top: 2px
+					background: $white
+					opacity: 0
+					transform: scaleX(0)
+					transition: .3s ease
+				&:hover
+					&:after
+						opacity: 1
+						transform: scaleX(1)
+		.copy
+			margin-top: 40px
+			+media-breakpoint-down(xs)
+				margin-top: 20px
+			p
+				margin-bottom: 0
+				line-height: 1.25
+
+
+
 // MAIN SITE HEADER
 .main-header
 	background: $white
 	&__wrap
 		height: 100px
+		+media-breakpoint-down(sm)
+			height: 70px
 	&__left
 		display: flex
 		align-items: center
@@ -45,6 +203,24 @@
 					&:before
 						transform: scaleX(1)
 						opacity: 1
+	.humb
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: flex-start
+		width: 40px
+		height: 24px
+		padding: 0
+		border-radius: 0
+		border: 0
+		background: $trsp
+		span
+			display: block
+			width: 40px
+			height: 2px
+			background: $dark
+		+media-breakpoint-up(xl)
+			display: none
 	.menu
 		a
 			position: relative
@@ -67,6 +243,11 @@
 				&:after
 					opacity: 1
 					transform: scaleX(1)
+		+media-breakpoint-down(xl)
+			a
+				margin: 0 10px
+		+media-breakpoint-down(lg)
+			display: none
 	.social
 		display: flex
 		justify-content: flex-end
@@ -75,6 +256,8 @@
 			line-height: 1
 			&:not(:first-child)
 				margin-left: 20px
+				+media-breakpoint-down(md)
+					margin-left: 10px
 			&:after
 				content: ''
 				position: absolute
@@ -101,16 +284,17 @@
 		position: relative
 		height: calc(100vh - 100px)
 		min-height: 500px
+		max-height: 1000px
 		background: $dark
 		.swiper-slide-active
 			.heroes__title
-				animation: translateLeft40 1.5s
+				animation: fadeInUp 1.5s 0.25s both
 			.heroes__descr
-				animation: translateLeft40 1.5s
+				animation: fadeInUp 1.5s 0.5s both
 			.heroes__btn
-				animation: translateLeft100 1.5s
+				animation: fadeInUp 1.5s 1s both
 			.heroes__photo
-				transform: scale(1)
+				transform: scale(1.15)
 		.swiper-pagination
 			display: flex
 			align-items: center
@@ -147,8 +331,8 @@
 		background-repeat: no-repeat
 		background-size: cover
 		background-position: center center
-		transform: scale(1.15)
-		transition: transform 6s
+		transform: scale(1)
+		transition: transform 6.9s cubic-bezier(0.37, 0, 0.63, 1)
 	&__content
 		position: relative
 		top: 50%
@@ -205,20 +389,7 @@
 			&:after
 				background: $dark
 
-@keyframes translateLeft40
-	from
-		transform: translateX(40%)
-		opacity: 0
-	to
-		transform: translateX(0%)
-		opacity: 1
-@keyframes translateLeft100
-	from
-		transform: translateX(100%)
-		opacity: 0
-	to
-		transform: translateX(0%)
-		opacity: 1
+
 
 // HOME PAGE: About us
 .h-about
@@ -254,7 +425,7 @@
 		+media-breakpoint-down(xl)
 			max-width: 450px
 		+media-breakpoint-down(lg)
-			max-width: 400px
+			max-width: 380px
 		&:before
 			content: ''
 			position: absolute
@@ -277,6 +448,7 @@
 // PROJECT item customize
 .project
 	position: relative
+	overflow: hidden
 	margin: 10px 0
 	&:hover
 		.project__photo 
@@ -487,3 +659,30 @@
 						transform: scaleX(1)
 			.phone
 				margin-top: 3px
+
+@media (orientation:landscape) and (max-height: 450px)
+	.m-menu
+		&__close
+			top: 16px
+			left: auto
+			right: 30px
+		&__wrap
+			padding: 26px 30px 40px
+		&__languages
+			margin-bottom: 30px
+		&__nav
+			.nav
+				flex-direction: row
+				flex-wrap: wrap
+				li
+					flex-basis: 50%
+					margin-top: 6px
+					padding-right: 10px
+					&:first-child
+						margin-top: 16px
+					a
+						font-size: 18px
+		&__footer
+			padding-top: 30px
+			.copy
+				margin-top: 20px

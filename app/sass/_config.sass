@@ -71,6 +71,14 @@ body
 	font-size: $fontsize
 	color: $textcolor
 	line-height: 1.65
+::-webkit-scrollbar
+	width: 8px
+	height: 8px
+::-webkit-scrollbar-thumb
+	cursor: pointer
+	background: $gray
+	&:hover
+		background: $dark
 
 h2
 	font-size: 42px
@@ -221,3 +229,17 @@ img
 
 
 
+// @keyframes translateLeft40
+// 	from
+// 		transform: translateX(40%)
+// 		opacity: 0
+// 	to
+// 		transform: translateX(0%)
+// 		opacity: 1
+// @keyframes translateLeft100
+// 	from
+// 		transform: translateX(100%)
+// 		opacity: 0
+// 	to
+// 		transform: translateX(0%)
+// 		opacity: 1

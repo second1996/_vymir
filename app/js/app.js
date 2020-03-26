@@ -6,14 +6,14 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 	wow.init();
 
-	var heroesSwiper = new Swiper ('.heroes__slider', {
+	let heroesSwiper = new Swiper ('.heroes__slider', {
 		// effect: 'fade',
 		allowTouchMove: false,
 		speed: 1000,
-		// autoplay: {
-		// 	delay: 7000,
-		// 	disableOnInteraction: false,
-		// },
+		autoplay: {
+			delay: 7000,
+			disableOnInteraction: false,
+		},
 		pagination: {
 			el: '.swiper-pagination',
 			clickable: true
@@ -24,6 +24,21 @@ document.addEventListener("DOMContentLoaded", function() {
 			loadPrevNext: true,
 		},
 	});
+
+	// Mobile menu
+	const menuOpenButton   = document.querySelector('.humb'),
+				menuCloseButton  = document.querySelector('.m-menu__close'),
+				menuWrap         = document.querySelector('.m-menu'),
+				siteBody         = document.querySelector('body');
+
+	menuOpenButton.onclick = function() {
+		menuWrap.classList.toggle('m-menu--opened');
+		siteBody.classList.toggle('m-menu--active');
+	}
+	menuCloseButton.onclick = function() {
+		menuWrap.classList.toggle('m-menu--opened');
+		siteBody.classList.toggle('m-menu--active');
+	}
 
 	// $('img').on('dragstart', function(event) { event.preventDefault(); });
 

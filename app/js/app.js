@@ -8,10 +8,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	let heroesSwiper = new Swiper ('.heroes__slider', {
 		// effect: 'fade',
+		// direction: 'vertical',
 		allowTouchMove: false,
 		speed: 1000,
 		autoplay: {
-			delay: 7000,
+			delay: 5000,
 			disableOnInteraction: false,
 		},
 		pagination: {

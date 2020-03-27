@@ -15,11 +15,14 @@
 	transition: .5s cubic-bezier(0.5, 1, 0.89, 1)
 	+media-breakpoint-down(xs)
 		transform: translateX(100%)
+		left: auto
+		right: 0
 	&--opened
 		visibility: visible
 		transform: translateX(0)
 		.m-menu__languages
-			animation: fadeInDown 1s both
+			.lang__item
+				animation: fadeInDown 1s both
 		.m-menu__nav
 			.nav
 				li
@@ -66,6 +69,9 @@
 		+media-breakpoint-down(xs)
 			margin-bottom: 30px
 		.lang
+			@for $i from 1 through 10
+				.lang__item:nth-child(#{$i}),
+					animation-delay: $i*0.2s
 			&__item
 				display: inline-block
 				color: $white
@@ -348,8 +354,6 @@
 		font-weight: 800
 		line-height: 1.25
 		text-transform: uppercase
-		transition: transform 1s ease, opacity 2s ease
-		will-change: transform, opacity
 		+media-breakpoint-down(xl)
 			font-size: 64px
 		+media-breakpoint-down(md)
@@ -369,16 +373,12 @@
 		color: #eee
 		font-size: 18px
 		font-weight: 300
-		transition: transform 1.5s ease, opacity 2s ease
-		will-change: transform, opacity
 		+media-breakpoint-down(xs)
 			font-size: 16px
 	&__btn
 		margin-top: 50px
 		border-color: $white
 		color: $white
-		transition: transform 3s ease, opacity 2s ease
-		will-change: transform, opacity
 		+media-breakpoint-down(xs)
 			margin-top: 36px
 		&:after

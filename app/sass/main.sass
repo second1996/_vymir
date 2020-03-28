@@ -23,6 +23,8 @@
 		.m-menu__languages
 			.lang__item
 				animation: fadeInDown 1s both
+		.m-menu__close
+			animation: fadeInDown 1s 0.9s both
 		.m-menu__nav
 			.nav
 				li
@@ -123,6 +125,8 @@
 						color: $white
 					+media-breakpoint-down(xs)
 						font-size: 32px
+					+media-breakpoint-down(xss)
+						font-size: 26px
 	&__footer
 		margin-top: auto
 		padding-top: 40px
@@ -169,6 +173,8 @@
 		height: 100px
 		+media-breakpoint-down(sm)
 			height: 70px
+		+media-breakpoint-down(xs)
+			height: 60px
 	&__left
 		display: flex
 		align-items: center
@@ -374,7 +380,7 @@
 		font-size: 18px
 		font-weight: 300
 		+media-breakpoint-down(xs)
-			font-size: 16px
+			font-size: 15px
 	&__btn
 		margin-top: 50px
 		border-color: $white
@@ -456,7 +462,8 @@
 			transform: translateY(0)
 			opacity: 1
 			.view
-				animation: fadeInDown 0.6s 0.2s both
+				transform: translateY(0)
+				opacity: 1
 		.project__meta
 			visibility: hidden
 			transform: translateY(40px)
@@ -487,16 +494,13 @@
 		display: flex
 		flex-direction: column
 		justify-content: flex-end
-		height: 420px
+		height: 100%
 		margin-bottom: 0
 		padding: 40px 50px
 		opacity: 0
 		transition: .6s ease
 		+media-breakpoint-down(xl)
-			height: 360px
 			padding: 30px
-		+media-breakpoint-down(xs)
-			height: 300px
 		&:before
 			content: ''
 			position: absolute
@@ -516,38 +520,49 @@
 			font-size: 24px
 			font-weight: 700
 			line-height: 1.35
-			+media-breakpoint-down(xs)
+			+media-breakpoint-down(md)
 				font-size: 18px
 		.location
 			display: block
 			color: $white
 			font-size: 16px
 			font-weight: 400
-			+media-breakpoint-down(xs)
+			+media-breakpoint-down(md)
 				font-size: 14px
 		.size
 			margin-top: 20px
 			color: $white
 			font-size: 20px
 			font-weight: 500
-			+media-breakpoint-down(xs)
+			+media-breakpoint-down(md)
 				margin-top: 15px
-				font-size: 18px
+				font-size: 16px
 		.descr
 			margin-bottom: 0
 			color: $white
 			font-size: 15px
-			+media-breakpoint-down(xs)
-				font-size: 12px
+			+media-breakpoint-down(md)
+				font-size: 13px
 		.view
 			margin-top: auto
-			display: inline-block
+			display: flex
+			align-items: center
 			color: $white
 			font-size: 14px
 			font-weight: 500
+			line-height: 1
 			text-transform: uppercase
-			+media-breakpoint-down(xs)
+			transform: translateY(-70px)
+			opacity: 0
+			transition: .6s cubic-bezier(0.5, 1, 0.89, 1)
+			.icon
+				margin-left: 5px
+				font-size: 10px
+			+media-breakpoint-down(md)
 				font-size: 12px
+				.icon
+					margin-top: -1px
+					font-size: 10px
 	&__meta
 		display: flex
 		flex-direction: column
@@ -564,13 +579,15 @@
 			font-size: 24px
 			font-weight: 700
 			line-height: 1.35
-			+media-breakpoint-down(xs)
-				font-size: 22px
+			+media-breakpoint-down(md)
+				font-size: 18px
 		.location
 			display: block
 			color: $white
 			font-size: 16px
 			font-weight: 400
+			+media-breakpoint-down(md)
+				font-size: 14px
 	&__link
 		position: absolute
 		top: 0
@@ -587,8 +604,14 @@
 		height: 420px
 		+media-breakpoint-down(xl)
 			height: 360px
-		+media-breakpoint-down(xs)
+		+media-breakpoint-down(md)
+			height: 320px
+		+media-breakpoint-down(sm)
 			height: 300px
+		+media-breakpoint-down(xs)
+			height: 340px
+		+media-breakpoint-down(xss)
+			height: 360px
 		&:after
 			content: ''
 			position: absolute
@@ -612,7 +635,7 @@
 
 
 
-// MAIN SITE FOOTER
+// Main site Footer
 .cta
 	margin-bottom: 80px
 	+media-breakpoint-down(lg)
@@ -744,6 +767,57 @@
 						transform: scaleX(1)
 			.phone
 				margin-top: 3px
+
+
+
+
+// Page Process
+.process
+	display: flex
+	flex-wrap: wrap
+	&__item
+		flex-basis: 25%
+		padding: 25px
+		min-height: 200px
+		margin-top: -1px
+		margin-left: -1px
+		background: $white
+		border: 1px solid $border
+		+media-breakpoint-down(lg)
+			flex-basis: 33.333%
+		+media-breakpoint-down(sm)
+			flex-basis: 50%
+		+media-breakpoint-down(xs)
+			flex-basis: 100%
+			min-height: auto
+			margin-left: 0
+			padding: 20px
+	&__number
+		color: $dark
+		font-size: 32px
+		font-weight: 700
+		line-height: 1
+		+media-breakpoint-down(xs)
+			font-size: 28px
+	&__text
+		margin-top: 15px
+		p
+			margin-bottom: 5px
+			font-size: 15px
+		span
+			border-bottom: 1px dashed $textcolor
+			font-size: 15px
+			transition: color .6s ease
+			&:hover
+				cursor: help
+				color: $accent
+		+media-breakpoint-down(xs)
+			p
+				font-size: 13px
+			span
+				font-size: 13px
+
+
 
 @media (orientation:landscape) and (max-height: 450px)
 	.m-menu

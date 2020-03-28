@@ -13,6 +13,10 @@ let path = {
 		images: baseDir + '/images/src/**/*',
 		scripts: [
 			// 'node_modules/jquery/dist/jquery.min.js', // npm vendor example (npm i --save-dev jquery)
+			'node_modules/swiper/js/swiper.min.js', // Swiper JS Slider
+			baseDir + '/libs/popper.min.js', // Popper lib
+			baseDir + '/libs/tippy-bundle.umd.min.js', // Tippy.js Tooltips
+			baseDir + '/libs/wow.min.js', // Swiper JS Slider
 			baseDir + '/js/app.js' // app.js. Always at the end
 		]
 	},

@@ -6,9 +6,11 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 	wow.init();
 
+	tippy('[data-tippy-content]', {
+		followCursor: 'horizontal',
+	});
+
 	let heroesSwiper = new Swiper ('.heroes__slider', {
-		// effect: 'fade',
-		// direction: 'vertical',
 		allowTouchMove: false,
 		speed: 1000,
 		autoplay: {

@@ -149,6 +149,8 @@ img
 .margin-lr-auto
 	margin-left: auto
 	margin-right: auto
+.max-w-100
+	max-width: 100%!important
 
 // SVG Icon
 .icon
@@ -160,6 +162,7 @@ img
 	fill: currentColor
 
 // Buttons
+button
 .btn
 	position: relative
 	display: inline-block
@@ -172,7 +175,8 @@ img
 	line-height: 54px
 	letter-spacing: 1px
 	text-transform: uppercase
-	transition: .3s ease
+	outline: none!important
+	transition: .45s ease
 	&:after
 		content: ''
 		position: absolute
@@ -182,8 +186,8 @@ img
 		width: 15px
 		height: 1px
 		background: $dark
-		transition: .3s ease
-		transform: translateY(-50%)
+		transition: .45s ease
+		// transform: translateY(-50%)
 	&:hover
 		background: $accent
 		color: $white
@@ -219,6 +223,161 @@ img
 			font-size: 15px
 	&-btn
 		margin-top: 16px
+
+
+
+// Table
+.responsive-table
+	display: block
+	width: 100%
+	overflow-x: auto
+	-webkit-overflow-scrolling: touch
+
+.table
+	display: flex
+	.swiper-button
+		&-prev
+			left: 0
+		&-next
+			right: 1px
+		&-prev,
+		&-next
+			width: 20px
+			height: 30px
+			background: $dark
+			transition: opacity .6s ease
+			outline: none
+			&:after
+				color: $white
+				font-size: 12px
+			+media-breakpoint-down(sm)
+				margin-top: -15px
+			+media-breakpoint-down(xs)
+				margin-top: -11px
+		&-disabled
+			visibility: hidden
+			opacity: 0
+	.include
+		display: block
+		width: 16px
+		height: 16px
+		background: url('../images/dest/check.svg') no-repeat center/16px
+		opacity: 0.7
+	.not-include
+		display: block
+		width: 16px
+		height: 16px
+		background: url('../images/dest/times.svg') no-repeat center/13px
+		opacity: 0.15
+	&__label
+		flex-basis: 465px
+		max-width: 465px
+		+media-breakpoint-down(lg)
+			flex-basis: 400px
+			max-width: 400px
+		+media-breakpoint-down(md)
+			flex-basis: 280px
+			max-width: 280px
+		+media-breakpoint-down(sm)
+			flex-basis: 250px
+			max-width: 250px
+		+media-breakpoint-down(xs)
+			flex-basis: 220px
+			max-width: 220px
+		+media-breakpoint-down(xss)
+			flex-basis: 180px
+			max-width: 180px
+		&--head
+			height: 96px
+			+media-breakpoint-down(sm)
+				height: 71px
+		&--th
+			max-width: 100%
+			overflow: hidden
+			height: 43px
+			padding-left: 20px
+			padding-right: 20px
+			border: 1px solid $border
+			border-right: 0
+			border-bottom: 0
+			box-sizing: border-box
+			color: $textcolor
+			font-size: 15px
+			font-weight: 300
+			line-height: 42px
+			white-space: nowrap
+			text-overflow: ellipsis
+			&:nth-child(odd)
+				background: #f9f9f9
+			&:last-child
+				height: 44px
+				border-bottom: 1px solid $border
+	&__columns
+		flex-grow: 1
+		border: 1px solid $border
+		border-right: 0
+		box-sizing: border-box
+	&__column
+		&--head
+			display: flex
+			align-items: center
+			justify-content: center
+			height: 95px
+			padding-left: 5px
+			padding-right: 5px
+			border: 1px solid $border
+			border-top: 0
+			border-left: 0
+			border-bottom: 0
+			box-sizing: border-box
+			color: $accent
+			font-size: 18px
+			font-weight: 500
+			text-align: center
+			+media-breakpoint-down(xl)
+				font-size: 16px
+			+media-breakpoint-down(sm)
+				font-size: 15px
+			+media-breakpoint-down(sm)
+				height: 70px
+		&--td
+			display: flex
+			align-items: center
+			justify-content: center
+			height: 43px
+			border: 1px solid $border
+			border-left: 0
+			border-bottom: 0
+			box-sizing: border-box
+			color: $textcolor
+			font-size: 15px
+			font-weight: 300
+			line-height: 42px
+			&:nth-child(odd)
+				background: #f9f9f9
+		&--btn
+			width: 100%
+			.btn
+				width: 100%
+				padding-left: 0
+				padding-right: 0
+				border: 1px solid $border
+				border-left: 0
+				border-bottom: 0
+				box-sizing: border-box
+				font-size: 14px
+				font-weight: 500
+				line-height: 70px
+				&:hover
+					border-color: $accent
+				&:after
+					display: none
+				+media-breakpoint-down(xl)
+					font-size: 12px
+				+media-breakpoint-down(xs)
+					line-height: 60px
+
+
 
 // Section
 .section

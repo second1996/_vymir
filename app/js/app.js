@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	tippy('[data-tippy-content]', {
 		followCursor: 'horizontal',
-		duration: [200, 500]
+		// duration: [200, 500]
 	});
 
 	let heroesSwiper = new Swiper ('.heroes__slider', {
@@ -34,18 +34,20 @@ document.addEventListener("DOMContentLoaded", function() {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
 		},
-		allowTouchMove: false,
+		roundLengths: true,
 		breakpoints: {
 			// when window width is >= 320px
 			320: {
+				allowTouchMove: true,
 				slidesPerView: 1
 			},
-			// when window width is >= 460px
+			// when window width is >= 480px
 			480: {
 				slidesPerView: 2
 			},
-			// when window width is >= 480px
+			// when window width is >= 768px
 			768: {
+				allowTouchMove: false,
 				slidesPerView: 4
 			},
 		},
@@ -67,5 +69,18 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 
 	// $('img').on('dragstart', function(event) { event.preventDefault(); });
+
+	// jQuery Inputmask
+	Inputmask().mask(document.querySelectorAll("input"));
+	// $('input[type="email"]').inputmask({
+	// 	mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,4}]",
+	// 	greedy: false,
+	// 	definitions: {
+	// 		'*': {
+	// 			validator: "[0-9A-Za-z!#$%&'*+/=?^_`{|}~\-]",
+	// 			casing: "lower"
+	// 		}
+	// 	}
+	// });
 
 });

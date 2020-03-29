@@ -1,0 +1,584 @@
+// GENERAL DOCUMENT STYLES
+::placeholder
+	color: $textcolor
+	font-weight: 300
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+
+body
+	position: relative
+	overflow-x: hidden
+	min-width: 320px
+	font-family: 'Roboto', sans-serif
+	font-size: $fontsize
+	color: $textcolor
+	line-height: 1.65
+	+media-breakpoint-down(xs)
+		font-size: 15px
+::-webkit-scrollbar
+	width: 8px
+	height: 8px
+::-webkit-scrollbar-thumb
+	cursor: pointer
+	background: $gray
+	&:hover
+		background: $dark
+
+h2
+	font-size: 42px
+	+media-breakpoint-down(xl)
+		font-size: 38px
+	+media-breakpoint-down(md)
+		font-size: 32px
+	+media-breakpoint-down(sm)
+		font-size: 28px
+	+media-breakpoint-down(xs)
+		font-size: 26px
+
+a
+	color: #222
+	transition: .3s ease
+	&:hover
+		color: #000
+		text-decoration: none
+a[href^="tel:"],
+a[href^="mailto:"]
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		top: 100%
+		left: 0
+		width: 100%
+		height: 1px
+		background: #000
+		opacity: 0
+		transform: scaleX(0)
+		transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
+	&:hover
+		text-decoration: none
+		&:after
+			opacity: 1
+			transform: scaleX(1)
+
+hr
+	width: 100%
+	height: 1px
+	margin: 40px 0
+	border: 0
+	background: $border
+
+ul
+	margin: 0
+	padding-left: 0
+	list-style: none
+	&.list-ul
+		> li
+			position: relative
+			padding-left: 18px
+			font-weight: 300
+			line-height: 1.5
+			&:not(:first-child)
+				margin-top: 6px
+			&:before
+				content: ''
+				position: absolute
+				top: 8px
+				left: 0
+				display: block
+				width: 8px
+				height: 8px
+				border: 1px solid $border
+				background: $gray
+				+media-breakpoint-down(xs)
+					top: 7px
+			> ul
+				margin-top: 6px
+
+p
+	margin-bottom: 0
+	font-weight: 300
+	&:not(:first-child)
+		margin-top: 10px
+
+img
+	user-drag: none
+	user-select: none
+
+.container
+	padding-left: 20px
+	padding-right: 20px
+.container-fluid
+	max-width: 1720px
+	padding-left: 20px
+	padding-right: 20px
+
+.text-center
+	text-align: center
+.margin-lr-auto
+	margin-left: auto
+	margin-right: auto
+.max-w-100
+	max-width: 100%!important
+.mb-160
+	margin-bottom: 160px
+	+media-breakpoint-down(md)
+		margin-bottom: 130px
+	+media-breakpoint-down(sm)
+		margin-bottom: 100px
+
+
+
+// SVG Icon
+.icon
+	display: inline-block
+	width: 1em
+	height: 1em
+	stroke-width: 0
+	stroke: currentColor
+	fill: currentColor
+
+// Buttons
+.btn
+	position: relative
+	display: inline-block
+	padding-left: 35px
+	padding-right: 70px
+	border: 1px solid #dadada
+	background: $trsp
+	color: $dark
+	font-size: 12px
+	line-height: 54px
+	letter-spacing: 1px
+	text-transform: uppercase
+	outline: none!important
+	transition: .45s ease
+	&:after
+		content: ''
+		position: absolute
+		top: 50%
+		right: 35px
+		display: inline-block
+		width: 15px
+		height: 1px
+		background: $dark
+		transition: .45s ease
+		// transform: translateY(-50%)
+	&:hover
+		background: $accent
+		color: $white
+		text-decoration: none
+		&:after
+			width: 25px
+			background: $white
+	+media-breakpoint-down(xs)
+		padding-left: 25px
+		padding-right: 55px
+		font-size: 11px
+		line-height: 45px
+		&:after
+			right: 25px
+
+
+
+// Modal
+.modal
+	&-backdrop
+		&.show
+			opacity: 0.8
+		&.fade
+			transition: opacity .15s linear
+	&-dialog
+		padding-top: 40px
+		max-width: 550px
+		+media-breakpoint-down(xs)
+			padding-top: 60px
+	&-content
+		position: relative
+		z-index: 0
+		border: 1px solid $dark
+		border-radius: 0
+		background: $white
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: -1
+			width: 100%
+			height: 100%
+			background: url('../images/dest/heroes-photo-01.jpg') no-repeat center/cover
+			opacity: 0.05
+	&-header
+		display: block
+		border-bottom: 0
+	&-close
+		position: absolute
+		top: -55px
+		right: 0
+		padding: 8px 10px
+		border-radius: 0
+		border: 0
+		background: $trsp
+		color: $white
+		font-size: 30px
+		line-height: 1
+		transition: .45s ease
+		outline: 0!important
+		&:hover
+			background: $dark
+			color: $white
+			cursor: pointer
+	&-title
+		margin-top: 40px
+		color: $accent
+		font-size: 26px
+		font-weight: 800
+		text-align: center
+		text-transform: uppercase
+		+media-breakpoint-down(xs)
+			margin-top: 20px
+			font-size: 20px
+	&-body
+		padding: 40px
+		+media-breakpoint-down(xs)
+			padding: 25px 25px 40px
+	.form-control
+		border: 1px solid $border
+		padding: 16px 24px
+		font-size: 15px
+		+media-breakpoint-down(xs)
+			padding: 14px 24px
+		&:focus
+			border-color: #dadada
+
+
+// Forms
+.form
+	&-label
+		color: $accent
+		font-size: 14px
+		font-weight: 500
+		text-transform: uppercase
+		cursor: pointer
+		.required
+			position: relative
+			top: -3px
+			color: red
+	&-control
+		appearance: none
+		width: 100%
+		margin-bottom: 20px
+		padding: 22px 30px
+		border-radius: 0
+		border: 0
+		border-bottom: 1px solid $border
+		color: $dark
+		line-height: 1
+		&--disabled
+			cursor: not-allowed
+			background: $white
+			opacity: 1
+		+media-breakpoint-down(xs)
+			padding: 15px 25px
+	&-descr
+		margin-top: 16px
+		margin-bottom: 0
+		font-weight: 300
+		+media-breakpoint-down(md)
+			font-size: 15px
+	&-btn
+		margin-top: 16px
+	&-submit
+		display: inline-block
+		padding-left: 35px
+		padding-right: 35px
+		border-radius: 0
+		border: 1px solid $dark
+		background: $dark
+		color: $white
+		font-size: 12px
+		line-height: 50px
+		letter-spacing: 1px
+		text-transform: uppercase
+		outline: none!important
+		transition: .45s ease
+		&:hover
+			border-color: #dadada
+			background: $white
+			color: $dark
+
+
+
+// Table
+.table
+	display: flex
+	.swiper-button
+		&-prev
+			left: 0
+		&-next
+			right: 1px
+		&-prev,
+		&-next
+			width: 20px
+			height: 30px
+			background: $dark
+			outline: none
+			opacity: 0.35
+			transition: opacity .6s ease
+			&:after
+				color: $white
+				font-size: 12px
+			&:hover
+				opacity: 1
+			+media-breakpoint-down(sm)
+				margin-top: -15px
+			+media-breakpoint-down(xs)
+				margin-top: -11px
+		&-disabled
+			visibility: hidden
+			opacity: 0
+	.include
+		display: block
+		width: 16px
+		height: 16px
+		background: url('../images/dest/check.svg') no-repeat center/16px
+		font-style: normal
+		opacity: 0.7
+	.not-include
+		display: block
+		width: 16px
+		height: 16px
+		background: url('../images/dest/times.svg') no-repeat center/13px
+		font-style: normal
+		opacity: 0.15
+	&__label
+		flex-basis: 465px
+		max-width: 465px
+		+media-breakpoint-down(lg)
+			flex-basis: 400px
+			max-width: 400px
+		+media-breakpoint-down(md)
+			flex-basis: 280px
+			max-width: 280px
+		+media-breakpoint-down(sm)
+			flex-basis: 250px
+			max-width: 250px
+		+media-breakpoint-down(xs)
+			flex-basis: 220px
+			max-width: 220px
+		+media-breakpoint-down(xss)
+			flex-basis: 180px
+			max-width: 180px
+		&--head
+			height: 96px
+			+media-breakpoint-down(sm)
+				height: 71px
+		&--th
+			max-width: 100%
+			overflow: hidden
+			height: 43px
+			padding-left: 20px
+			padding-right: 20px
+			border: 1px solid $border
+			border-right: 0
+			border-bottom: 0
+			box-sizing: border-box
+			color: $textcolor
+			font-size: 15px
+			font-weight: 300
+			line-height: 42px
+			white-space: nowrap
+			text-overflow: ellipsis
+			&:nth-child(odd)
+				background: #f9f9f9
+			&:last-child
+				height: 44px
+				border-bottom: 1px solid $border
+	&__columns
+		position: relative
+		flex-grow: 1
+		border: 1px solid $border
+		border-right: 0
+		box-sizing: border-box
+		&:after
+			content: ''
+			position: absolute
+			top: 0
+			left: auto
+			right: 0
+			bottom: 0
+			width: 1px
+			height: 100%
+			background: $border
+	&__column
+		&--head
+			display: flex
+			align-items: center
+			justify-content: center
+			height: 95px
+			padding-left: 5px
+			padding-right: 5px
+			background: $dark
+			border: 1px solid $accent
+			border-top: 0
+			border-left: 0
+			border-bottom: 0
+			box-sizing: border-box
+			color: $white
+			font-size: 18px
+			// font-weight: 500
+			text-align: center
+			+media-breakpoint-down(xl)
+				font-size: 16px
+			+media-breakpoint-down(sm)
+				font-size: 15px
+			+media-breakpoint-down(sm)
+				height: 70px
+		&--td
+			display: flex
+			align-items: center
+			justify-content: center
+			height: 43px
+			border: 1px solid $border
+			border-left: 0
+			border-bottom: 0
+			box-sizing: border-box
+			color: $textcolor
+			font-size: 15px
+			font-weight: 300
+			line-height: 42px
+			&:nth-child(odd)
+				background: #f9f9f9
+		&--btn
+			width: 100%
+			.btn
+				width: 100%
+				padding-left: 0
+				padding-right: 0
+				border: 1px solid $border
+				border-left: 0
+				border-bottom: 0
+				box-sizing: border-box
+				font-size: 14px
+				font-weight: 500
+				line-height: 70px
+				&:hover
+					border-color: $accent
+				&:after
+					display: none
+				+media-breakpoint-down(xl)
+					font-size: 12px
+				+media-breakpoint-down(xs)
+					line-height: 60px
+
+
+
+// Section
+.section
+	margin: 160px 0
+	+media-breakpoint-down(md)
+		margin: 130px 0
+	+media-breakpoint-down(sm)
+		margin: 100px 0
+	&-wrap
+		margin-top: 50px
+		+media-breakpoint-down(xs)
+			margin-top: 40px
+	&-label
+		display: inline-block
+		margin-bottom: 8px
+		padding: 8px 12px
+		background: $dark
+		color: $white
+		font-size: 14px
+		line-height: 1
+		text-transform: uppercase
+		+media-breakpoint-down(xs)
+			font-size: 12px
+	&-suptitle
+		margin-bottom: 2px
+		color: $gray
+		font-size: 18px
+		font-weight: 300
+		text-transform: uppercase
+	&-title
+		margin-bottom: 20px
+		color: #000
+		font-size: 42px
+		font-weight: 700
+		line-height: 1.16
+		text-transform: uppercase
+		+media-breakpoint-down(xl)
+			font-size: 38px
+		+media-breakpoint-down(md)
+			font-size: 32px
+		+media-breakpoint-down(sm)
+			font-size: 28px
+		+media-breakpoint-down(xs)
+			font-size: 26px
+	&-descr
+		max-width: 600px
+		margin-bottom: 0
+		+media-breakpoint-down(md)
+			max-width: 100%
+	&-btn
+		+media-breakpoint-down(sm)
+			margin-top: 20px
+
+
+
+// PAGES Customize
+.main
+	&-head
+		position: relative
+		z-index: 0
+		display: flex
+		align-items: center
+		min-height: 250px
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center center
+		+media-breakpoint-down(lg)
+			min-height: 200px
+		+media-breakpoint-down(sm)
+			min-height: 160px
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: -1
+			background: rgba($dark, .75)
+		&__title
+			padding-top: 30px
+			padding-bottom: 30px
+			color: $white
+			font-size: 40px
+			font-weight: 700
+			text-align: center
+			text-transform: uppercase
+			+media-breakpoint-down(md)
+				font-size: 36px
+			+media-breakpoint-down(sm)
+				font-size: 32px
+				line-height: 1.5
+			+media-breakpoint-down(xs)
+				font-size: 28px
+				line-height: 1.35
+
+	&-section
+		margin-top: 100px
+		+media-breakpoint-down(md)
+			margin: 80px 0
+		+media-breakpoint-down(sm)
+			margin: 60px 0

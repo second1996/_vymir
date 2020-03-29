@@ -12,8 +12,11 @@ let path = {
 		styles: baseDir + '/' + preprocessor + '/main.*',
 		images: baseDir + '/images/src/**/*',
 		scripts: [
-			// 'node_modules/jquery/dist/jquery.min.js', // npm vendor example (npm i --save-dev jquery)
+			'node_modules/jquery/dist/jquery.min.js', // npm vendor example (npm i --save-dev jquery)
 			'node_modules/swiper/js/swiper.min.js', // Swiper JS Slider
+			'node_modules/bootstrap/js/dist/util.js', // Bootstrap Util
+			'node_modules/bootstrap/js/dist/modal.js', // Bootstrap Modal
+			'node_modules/inputmask/dist/jquery.inputmask.min.js', // Inputmask
 			baseDir + '/libs/popper.min.js', // Popper lib
 			baseDir + '/libs/tippy-bundle.umd.min.js', // Tippy.js Tooltips
 			baseDir + '/libs/wow.min.js', // Swiper JS Slider

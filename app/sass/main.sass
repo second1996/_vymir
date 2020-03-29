@@ -95,7 +95,7 @@
 						background: $white
 						opacity: 0
 						transform: scaleX(0)
-						transition: .3s ease
+						transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
 					&:hover
 						color: $white
 						text-decoration: none
@@ -151,7 +151,7 @@
 					background: $white
 					opacity: 0
 					transform: scaleX(0)
-					transition: .3s ease
+					transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
 				&:hover
 					&:after
 						opacity: 1
@@ -208,7 +208,7 @@
 					background: #000
 					opacity: 0
 					transform: scaleX(0)
-					transition: .3s ease
+					transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
 				&:hover
 					color: #000
 					text-decoration: none
@@ -249,7 +249,7 @@
 				background: #000
 				opacity: 0
 				transform: scaleX(0)
-				transition: .3s ease
+				transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
 			&:hover
 				text-decoration: none
 				&:after
@@ -281,7 +281,7 @@
 				background: #000
 				opacity: 0
 				transform: scaleX(0)
-				transition: .3s ease
+				transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
 			&:hover
 				&:after
 					opacity: 1
@@ -699,7 +699,7 @@
 				background: $white
 				opacity: 0
 				transform: scaleX(0)
-				transition: .3s ease
+				transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
 			&:hover
 				&:after
 					opacity: 1
@@ -730,7 +730,7 @@
 					background: $white
 					opacity: 0
 					transform: scaleX(0)
-					transition: .3s ease
+					transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
 				&:hover
 					&:after
 						opacity: 1
@@ -746,28 +746,13 @@
 			&:not(:first-child)
 				margin-top: 10px
 			a
-				position: relative
 				color: #999
 				&:after
-					content: ''
-					position: absolute
-					top: 100%
-					left: 0
-					width: 100%
-					height: 1px
-					margin-top: 2px
 					background: #ccc
-					opacity: 0
-					transform: scaleX(0)
-					transition: .3s ease
 				&:hover
 					color: #ccc
-					&:after
-						opacity: 1
-						transform: scaleX(1)
 			.phone
 				margin-top: 3px
-
 
 
 
@@ -816,6 +801,206 @@
 				font-size: 13px
 			span
 				font-size: 13px
+
+
+
+// Page About Us
+.p-about
+	.about
+		&__title
+			max-width: 475px
+			margin-top: 60px
+			margin-bottom: 0
+			color: #000
+			font-size: 42px
+			font-weight: 700
+			line-height: 1.16
+			text-transform: uppercase
+			+media-breakpoint-down(xl)
+				font-size: 38px
+			+media-breakpoint-down(md)
+				margin-top: 0
+				font-size: 32px
+			+media-breakpoint-down(sm)
+				font-size: 28px
+			+media-breakpoint-down(xs)
+				font-size: 26px
+		&__descr
+			margin-top: 20px
+		&__photo
+			width: 100%
+			max-width: 500px
+			height: 450px
+			margin-left: auto
+			+media-breakpoint-down(xl)
+				max-width: 450px
+			+media-breakpoint-down(lg)
+				max-width: 380px
+			img
+				display: block
+				width: 100%
+				height: 100%
+				object-fit: cover
+	
+	.figures
+		&__item
+			text-align: center
+			+media-breakpoint-down(md)
+				&:nth-child(-n+2)
+					margin-bottom: 20px
+		&__icon
+			margin-bottom: 20px
+			color: $accent
+			font-size: 60px
+			+media-breakpoint-down(xs)
+				margin-bottom: 10px
+				font-size: 50px
+		&__number
+			color: $accent
+			font-size: 42px
+			font-weight: 700
+			line-height: 1
+			+media-breakpoint-down(lg)
+				font-size: 38px
+			+media-breakpoint-down(md)
+				font-size: 32px
+			+media-breakpoint-down(sm)
+				font-size: 28px
+			+media-breakpoint-down(xs)
+				font-size: 26px
+		&__title
+			margin-top: 10px
+			font-weight: 300
+			line-height: 1.35
+
+	.team
+		position: relative
+		&__item
+			&:hover
+				.team__inner
+					visibility: visible
+					opacity: 1
+			+media-breakpoint-down(xs)
+				&:not(:first-child)
+					margin-top: 20px
+		&__inner
+			visibility: hidden
+			position: absolute
+			top: 0
+			left: 10px
+			right: 10px
+			bottom: 0
+			z-index: 0
+			display: flex
+			flex-direction: column
+			align-items: center
+			justify-content: center
+			padding: 0 15px
+			opacity: 0
+			transition: .6s ease
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				z-index: -1
+				background: rgba(#222, .9)
+		&__name
+			margin-bottom: 0
+			color: $white
+			font-size: 32px
+			font-weight: 700
+			line-height: 1.25
+			text-align: center
+			text-transform: uppercase
+			+media-breakpoint-down(md)
+				font-size: 28px
+		&__social
+			display: flex
+			flex-wrap: wrap
+			justify-content: center
+			margin-top: 20px
+			a
+				position: relative
+				display: inline-block
+				margin: 0 10px
+				color: rgba($white, 0.65)
+				font-size: 16px
+				font-weight: 400
+				&:after
+					content: ''
+					position: absolute
+					top: 100%
+					left: 0
+					width: 100%
+					height: 1px
+					background: $white
+					opacity: 0
+					transform: scaleX(0)
+					transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
+				&:hover
+					color: $white
+					&:after
+						opacity: 1
+						transform: scaleX(1)
+		&__photo
+			width: 100%
+			height: 75vh
+			max-height: 700px
+			+media-breakpoint-down(lg)
+				max-height: 560px
+			+media-breakpoint-down(md)
+				max-height: 500px
+			+media-breakpoint-down(sm)
+				max-height: 400px
+			img
+				display: block
+				width: 100%
+				height: 100%
+				object-fit: cover
+
+
+
+// Page Contacts
+.contact
+	text-align: center
+	+media-breakpoint-down(md)
+		&.adress
+			margin-top: 30px
+	+media-breakpoint-down(sm)
+		&.email
+			margin-top: 30px
+	&__title
+		margin-bottom: 20px
+		color: $accent
+		font-size: 22px
+		font-weight: 700
+		line-height: 1.35
+		+media-breakpoint-down(md)
+			margin-bottom: 10px
+			font-size: 20px
+		+media-breakpoint-down(xs)
+			font-size: 18px
+	&__info
+		a
+			color: $textcolor
+			&:hover
+				color: $accent
+		.phone
+			&:not(:first-child)
+				margin-top: 5px
+.contact-map
+	iframe
+		display: block
+		width: 100%
+		height: 65vh
+		max-height: 400px
+
+
+
+
 
 
 

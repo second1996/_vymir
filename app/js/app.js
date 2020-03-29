@@ -1,13 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
 	
 	wow = new WOW({
-		offset: 100,
+		// offset: 100,
 		mobile: true,
 	});
 	wow.init();
 
 	tippy('[data-tippy-content]', {
 		followCursor: 'horizontal',
+		duration: [200, 500]
 	});
 
 	let heroesSwiper = new Swiper ('.heroes__slider', {

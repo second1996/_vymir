@@ -280,10 +280,10 @@
 					<form class="cta__form form wow fadeInUp" data-wow-delay="0.3s">
 						<div class="row">
 							<div class="col-sm-6">
-								<input type="text" class="form-control" placeholder="Ваше ім'я">
+								<input type="text" class="form-control" placeholder="Ваше ім'я" required>
 							</div>
 							<div class="col-sm-6">
-								<input type="text" class="form-control" placeholder="+38 (___) __-__-___">
+								<input type="text" class="form-control" placeholder="+38 (___) __-__-___" data-inputmask="'mask': '+38 (999) 99-99-999'" required>
 							</div>
 							<div class="col-sm">
 								<p class="form-descr">Натискаючи на кнопку, я підтверджую свою згоду з політикою конфіденційності</p>
@@ -296,7 +296,7 @@
 				</div><!-- /.col -->
 			</div><!-- /.row -->
 		</div><!-- /.container, cta -->
-		<div class="footer" style="background-image: url('images/dest/heroes-photo-01.jpg');">
+		<div class="footer" style="background-image: url('images/dest/footer-bg.jpg');">
 			<div class="container">
 				<div class="row justify-content-between">
 					<div class="col-auto col-logo wow fadeInUp">
@@ -401,7 +401,7 @@
 						</div>
 						<div class="form-group">
 							<label for="service-phone" class="form-label">Номер телефону <span class="required">*</span></label>
-							<input type="text" name="service-phone" class="form-control" id="service-phone" data-inputmask="'mask': '+38 (099) 99-99-999'" required>
+							<input type="text" name="service-phone" class="form-control" id="service-phone" data-inputmask="'mask': '+38 (999) 99-99-999'" required>
 						</div>
 						<div class="form-group">
 							<label for="service-name" class="form-label">Послуга <span class="required">*</span></label>
@@ -409,10 +409,10 @@
 						</div>
 						<div class="form-group">
 							<label for="service-text" class="form-label">Ваше повідомлення</label>
-							<textarea class="form-control" rows="5" name="service-text" id="service-text"></textarea>
+							<textarea class="form-control form-textarea" rows="5" name="service-text" id="service-text"></textarea>
 						</div>
 						<div class="form-group">
-							<button type="submit" class="btn" value="">Надіслати</button>
+							<button type="submit" class="form-submit btn" value="">Надіслати</button>
 						</div>
 					</form>
 				</div>
@@ -425,10 +425,8 @@
 	<script>
 	$(document).ready(function() {
 		$('#serviceModal').on('show.bs.modal', function (event) {
-			var button = $(event.relatedTarget) // Button that triggered the modal
-			var serviceName = button.data('service') // Extract info from data-* attributes
-			// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-			// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+			var button = $(event.relatedTarget)
+			var serviceName = button.data('service')
 			var modal = $(this)
 			modal.find('#service-name').val(serviceName)
 		});

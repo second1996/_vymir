@@ -68,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		siteBody.classList.toggle('m-menu--active');
 	}
 
-	// $('img').on('dragstart', function(event) { event.preventDefault(); });
 
 	// jQuery Inputmask
 	Inputmask().mask(document.querySelectorAll("input"));
@@ -84,3 +83,4 @@ document.addEventListener("DOMContentLoaded", function() {
 	// });
 
 });
+

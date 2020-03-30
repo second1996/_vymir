@@ -29,6 +29,11 @@ body
 	&:hover
 		background: $dark
 
+h2, h3, h4, h5, h6
+	color: #000
+	font-weight: 700
+	text-transform: uppercase
+
 h2
 	font-size: 42px
 	+media-breakpoint-down(xl)
@@ -39,6 +44,46 @@ h2
 		font-size: 28px
 	+media-breakpoint-down(xs)
 		font-size: 26px
+h3
+	font-size: 38px
+	+media-breakpoint-down(xl)
+		font-size: 36px
+	+media-breakpoint-down(md)
+		font-size: 30px
+	+media-breakpoint-down(sm)
+		font-size: 26px
+	+media-breakpoint-down(xs)
+		font-size: 24px
+h4
+	font-size: 34px
+	+media-breakpoint-down(xl)
+		font-size: 32px
+	+media-breakpoint-down(md)
+		font-size: 28px
+	+media-breakpoint-down(sm)
+		font-size: 24px
+	+media-breakpoint-down(xs)
+		font-size: 22px
+h5
+	font-size: 30px
+	+media-breakpoint-down(xl)
+		font-size: 28px
+	+media-breakpoint-down(md)
+		font-size: 24px
+	+media-breakpoint-down(sm)
+		font-size: 22px
+	+media-breakpoint-down(xs)
+		font-size: 20px
+h6
+	font-size: 26px
+	+media-breakpoint-down(xl)
+		font-size: 24px
+	+media-breakpoint-down(md)
+		font-size: 22px
+	+media-breakpoint-down(sm)
+		font-size: 20px
+	+media-breakpoint-down(xs)
+		font-size: 18px
 
 a
 	color: #222
@@ -77,28 +122,29 @@ ul
 	margin: 0
 	padding-left: 0
 	list-style: none
-	&.list-ul
-		> li
-			position: relative
-			padding-left: 18px
-			font-weight: 300
-			line-height: 1.5
-			&:not(:first-child)
-				margin-top: 6px
-			&:before
-				content: ''
-				position: absolute
-				top: 8px
-				left: 0
-				display: block
-				width: 8px
-				height: 8px
-				border: 1px solid $border
-				background: $gray
-				+media-breakpoint-down(xs)
-					top: 7px
-			> ul
-				margin-top: 6px
+.list-ul,
+.main-article ul
+	> li
+		position: relative
+		padding-left: 18px
+		font-weight: 300
+		line-height: 1.5
+		&:not(:first-child)
+			margin-top: 6px
+		&:before
+			content: ''
+			position: absolute
+			top: 8px
+			left: 0
+			display: block
+			width: 8px
+			height: 8px
+			border: 1px solid $border
+			background: $gray
+			+media-breakpoint-down(xs)
+				top: 7px
+		> ul
+			margin-top: 6px
 
 p
 	margin-bottom: 0
@@ -107,6 +153,9 @@ p
 		margin-top: 10px
 
 img
+	display: block
+	max-width: 100%
+	height: auto
 	user-drag: none
 	user-select: none
 
@@ -131,6 +180,58 @@ img
 		margin-bottom: 130px
 	+media-breakpoint-down(sm)
 		margin-bottom: 100px
+.mt-60
+	margin-top: 60px
+	+media-breakpoint-down(sm)
+		margin-top: 40px
+
+
+
+// GO BACK BUTTON (Projects)
+.go-back-btn
+	position: fixed
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 1
+	overflow: 0
+	transform: translateY(100%)
+	transition: .45s ease
+	&.is-shown
+		transform: translateY(0)
+		opacity: 0.6
+		&:hover
+			opacity: 1
+	&.is-hidden
+		transform: translateY(100%)
+		opacity: 0
+	&__link
+		display: flex
+		align-items: center
+		justify-content: center
+		padding: 20px
+		border-top: 1px solid $border
+		background: $white
+		color: $accent
+		line-height: 1
+		+media-breakpoint-down(xs)
+			padding: 12px
+		&:hover
+			border-color: $dark
+			background: $dark
+			color: $white
+			.icon
+				transform: translateX(-6px)
+		.icon
+			margin-right: 6px
+			font-size: 14px
+			will-change: transform
+			transition: transform .45s cubic-bezier(0.5, 1, 0.89, 1)
+		span
+			font-size: 13px
+			font-weight: 400
+			text-transform: uppercase
+
 
 
 
@@ -214,10 +315,12 @@ img
 			z-index: -1
 			width: 100%
 			height: 100%
-			background: url('../images/dest/heroes-photo-01.jpg') no-repeat center/cover
-			opacity: 0.05
+			background: url('../images/dest/project-photo-03.jpg') no-repeat center/cover
+			opacity: 0.1
 	&-header
 		display: block
+		background: $dark
+		border-radius: 0
 		border-bottom: 0
 	&-close
 		position: absolute
@@ -232,32 +335,34 @@ img
 		line-height: 1
 		transition: .45s ease
 		outline: 0!important
+		transform: scale(1)
+		will-change: transform
 		&:hover
-			background: $dark
-			color: $white
 			cursor: pointer
+			transform: scale(0.85)
 	&-title
-		margin-top: 40px
-		color: $accent
-		font-size: 26px
+		padding: 25px
+		color: $white
+		font-size: 24px
 		font-weight: 800
-		text-align: center
 		text-transform: uppercase
 		+media-breakpoint-down(xs)
-			margin-top: 20px
+			padding: 15px 10px
 			font-size: 20px
 	&-body
 		padding: 40px
 		+media-breakpoint-down(xs)
-			padding: 25px 25px 40px
+			padding: 25px 25px 50px
 	.form-control
 		border: 1px solid $border
 		padding: 16px 24px
 		font-size: 15px
-		+media-breakpoint-down(xs)
-			padding: 14px 24px
+		transition: border .3s ease
 		&:focus
 			border-color: #dadada
+		+media-breakpoint-down(xs)
+			padding: 14px 24px
+
 
 
 // Forms
@@ -288,6 +393,8 @@ img
 			opacity: 1
 		+media-breakpoint-down(xs)
 			padding: 15px 25px
+	&-textarea
+		resize: none
 	&-descr
 		margin-top: 16px
 		margin-bottom: 0
@@ -297,23 +404,10 @@ img
 	&-btn
 		margin-top: 16px
 	&-submit
-		display: inline-block
-		padding-left: 35px
-		padding-right: 35px
-		border-radius: 0
-		border: 1px solid $dark
 		background: $dark
 		color: $white
-		font-size: 12px
-		line-height: 50px
-		letter-spacing: 1px
-		text-transform: uppercase
-		outline: none!important
-		transition: .45s ease
-		&:hover
-			border-color: #dadada
+		&:after
 			background: $white
-			color: $dark
 
 
 
@@ -575,10 +669,43 @@ img
 			+media-breakpoint-down(xs)
 				font-size: 28px
 				line-height: 1.35
-
+	// Main ection
 	&-section
 		margin-top: 100px
 		+media-breakpoint-down(md)
 			margin: 80px 0
 		+media-breakpoint-down(sm)
 			margin: 60px 0
+	// Main Article
+	&-article
+		margin: 100px 0 160px
+		+media-breakpoint-down(md)
+			margin: 100px 0 130px
+		+media-breakpoint-down(sm)
+			margin: 100px 0
+		p
+			margin-bottom: 10px
+			a
+				position: relative
+				font-weight: 400
+				&:after
+					content: ''
+					position: absolute
+					top: 100%
+					left: 0
+					width: 100%
+					height: 1px
+					background: #000
+					opacity: 0
+					transform: scaleX(0)
+					transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
+				&:hover
+					text-decoration: none
+					&:after
+						opacity: 1
+						transform: scaleX(1)
+		img
+			margin-bottom: 20px
+			border: 1px solid $border
+			box-shadow: 0 10px 15px rgba($dark, 0.1)
+	

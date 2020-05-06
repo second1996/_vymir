@@ -720,13 +720,13 @@
 			font-size: 20px
 		+media-breakpoint-down(sm)
 			font-size: 18px
+		span.date
+			text-transform: lowercase
 	&__title
 		display: block
 		color: rgba(#000, .5)
 		font-size: 15px
 		font-weight: 400
-		
-
 
 
 // MAIN FOOTER
@@ -900,7 +900,6 @@
 	.about
 		&__title
 			max-width: 475px
-			margin-top: 60px
 			margin-bottom: 0
 			color: #000
 			font-size: 42px
@@ -910,7 +909,6 @@
 			+media-breakpoint-down(xl)
 				font-size: 38px
 			+media-breakpoint-down(md)
-				margin-top: 0
 				font-size: 32px
 			+media-breakpoint-down(sm)
 				font-size: 28px
@@ -966,6 +964,8 @@
 
 	.team
 		position: relative
+		.section-descr
+			max-width: 700px
 		&__item
 			&:hover
 				.team__inner
@@ -1091,7 +1091,20 @@
 
 
 
-
+// Other technical pages
+.tech-page
+	display: flex
+	flex-direction: column
+	align-items: center
+	&-descr
+		margin-bottom: 30px
+		padding: 0 15px
+		font-size: 20px
+		text-align: center
+		+media-breakpoint-down(md)
+			font-size: 18px
+		+media-breakpoint-down(xs)
+			font-size: 16px
 
 
 

@@ -71,16 +71,47 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// jQuery Inputmask
 	Inputmask().mask(document.querySelectorAll("input"));
-	// $('input[type="email"]').inputmask({
-	// 	mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,4}]",
-	// 	greedy: false,
-	// 	definitions: {
-	// 		'*': {
-	// 			validator: "[0-9A-Za-z!#$%&'*+/=?^_`{|}~\-]",
-	// 			casing: "lower"
-	// 		}
-	// 	}
-	// });
+
+	$('#serviceModal').on('show.bs.modal', function (event) {
+		var button = $(event.relatedTarget)
+		var serviceName = button.data('service')
+		var modal = $(this)
+		modal.find('#service-name, #service-title').val(serviceName)
+	});
+
+	// Project Go back button
+	var didScroll;
+	var lastScrollTop = 0;
+	var delta = 5;
+	var goBackHeight = $('.go-back-btn').outerHeight();
+
+	$(window).scroll(function(event){
+		didScroll = true;
+	});
+
+	setInterval(function() {
+		if (didScroll) {
+			hasScrolled();
+			didScroll = false;
+		}
+	}, 250);
+
+	function hasScrolled() {
+		var st = $(this).scrollTop();
+
+		if (Math.abs(lastScrollTop - st) <= delta)
+			return;
+		
+		if (st > lastScrollTop && st > goBackHeight){
+			$('.go-back-btn').removeClass('is-hidden').addClass('is-shown');
+		} else {
+			if(st + $(window).height() < $(document).height()) {
+				$('.go-back-btn').removeClass('is-shown').addClass('is-hidden');
+			}
+		}
+		
+		lastScrollTop = st;
+	}
 
 });
 

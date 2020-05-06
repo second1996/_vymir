@@ -19,7 +19,7 @@ let path = {
 			'node_modules/inputmask/dist/jquery.inputmask.min.js', // Inputmask
 			baseDir + '/libs/popper.min.js', // Popper lib
 			baseDir + '/libs/tippy-bundle.umd.min.js', // Tippy.js Tooltips
-			baseDir + '/libs/wow.min.js', // Swiper JS Slider
+			baseDir + '/libs/wow.min.js', // WOW animation viewport
 			baseDir + '/js/app.js' // app.js. Always at the end
 		]
 	},

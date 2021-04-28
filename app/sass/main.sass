@@ -96,7 +96,7 @@
 						background: $white
 						opacity: 0
 						transform: scaleX(0)
-						transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
+						transition: .3s cubic-bezier(0.5, 1, 0.89, 1)
 					&:hover
 						color: $white
 						text-decoration: none
@@ -118,6 +118,7 @@
 					+media-breakpoint-down(xs)
 						margin-top: 6px
 				a
+					display: inline-block
 					color: rgba($white, 0.4)
 					font-size: 26px
 					font-weight: 500
@@ -126,8 +127,19 @@
 						color: $white
 					+media-breakpoint-down(xs)
 						font-size: 32px
-					+media-breakpoint-down(xss)
+					+media-breakpoint-down(xxs)
 						font-size: 26px
+					&.v-academy
+						margin-top: 12px
+						padding-left: 16px
+						padding-right: 16px
+						border: 1px solid $white
+						background-color: $white
+						color: $accent
+						&:hover
+							border-color: $white
+							background-color: $trsp
+							color: $white
 	&__footer
 		margin-top: auto
 		padding-top: 40px
@@ -152,7 +164,7 @@
 					background: $white
 					opacity: 0
 					transform: scaleX(0)
-					transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
+					transition: .3s cubic-bezier(0.5, 1, 0.89, 1)
 				&:hover
 					&:after
 						opacity: 1
@@ -164,6 +176,33 @@
 			p
 				margin-bottom: 0
 				line-height: 1.25
+
+@media (orientation:landscape) and (max-height: 450px)
+	.m-menu
+		&__close
+			top: 16px
+			left: auto
+			right: 30px
+		&__wrap
+			padding: 26px 30px 40px
+		&__languages
+			margin-bottom: 30px
+		&__nav
+			.nav
+				flex-direction: row
+				flex-wrap: wrap
+				li
+					flex-basis: 50%
+					margin-top: 6px
+					padding-right: 10px
+					&:first-child
+						margin-top: 6px
+					a
+						font-size: 18px
+		&__footer
+			padding-top: 30px
+			.copy
+				margin-top: 20px
 
 
 
@@ -188,13 +227,18 @@
 	.lang
 		padding-left: 15px
 		border-left: 1px solid $border
+		+media-breakpoint-down(xl)
+			display: flex
+			flex-direction: column
 		&__item
-			display: inline-block
-			color: #000
+			color: $accent
 			font-size: 15px
 			line-height: 1
-			&:not(:first-child)
-				margin-left: 6px
+			&:not(:last-child)
+				margin-right: 6px
+				+media-breakpoint-down(xl)
+					margin-right: 0
+					margin-bottom: 8px
 			a
 				position: relative
 				color: $gray
@@ -206,12 +250,12 @@
 					left: 0
 					width: 100%
 					height: 1px
-					background: #000
+					background: $accent
 					opacity: 0
 					transform: scaleX(0)
-					transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
+					transition: .3s cubic-bezier(0.5, 1, 0.89, 1)
 				&:hover
-					color: #000
+					color: $accent
 					text-decoration: none
 					&:before
 						transform: scaleX(1)
@@ -236,6 +280,7 @@
 			display: none
 	.menu
 		a
+			display: inline-block
 			position: relative
 			margin: 0 15px
 			font-size: 14px
@@ -247,10 +292,10 @@
 				left: 0
 				width: 100%
 				height: 1px
-				background: #000
+				background: $accent
 				opacity: 0
 				transform: scaleX(0)
-				transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
+				transition: .3s cubic-bezier(0.5, 1, 0.89, 1)
 			&:hover
 				text-decoration: none
 				&:after
@@ -261,6 +306,17 @@
 				margin: 0 10px
 		+media-breakpoint-down(lg)
 			display: none
+		.v-academy
+			padding: 4px 12px
+			border: 1px solid $accent
+			background-color: $accent
+			color: $white
+			&::after
+				display: none
+			&:hover
+				border-color: $accent
+				background-color: $trsp
+				color: $accent
 	.social
 		display: flex
 		justify-content: flex-end
@@ -279,10 +335,10 @@
 				width: 100%
 				height: 1px
 				margin-top: 2px
-				background: #000
+				background: $accent
 				opacity: 0
 				transform: scaleX(0)
-				transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
+				transition: .3s cubic-bezier(0.5, 1, 0.89, 1)
 			&:hover
 				&:after
 					opacity: 1
@@ -372,7 +428,7 @@
 			font-size: 32px
 			white-space: pre-wrap
 			word-wrap: break-word
-		+media-breakpoint-down(xss)
+		+media-breakpoint-down(xxs)
 			max-width: 300px
 	&__descr
 		max-width: 775px
@@ -403,7 +459,7 @@
 	&__title
 		max-width: 475px
 		margin-bottom: 0
-		color: #000
+		color: $accent
 		font-size: 42px
 		font-weight: 700
 		line-height: 1.16
@@ -612,7 +668,7 @@
 			height: 300px
 		+media-breakpoint-down(xs)
 			height: 340px
-		+media-breakpoint-down(xss)
+		+media-breakpoint-down(xxs)
 			height: 360px
 		&:after
 			content: ''
@@ -624,7 +680,7 @@
 			display: block
 			width: 100%
 			height: 60%
-			background: linear-gradient(180deg, rgba(#000, 0) 0%, #000 100%)
+			background: linear-gradient(180deg, rgba($accent, 0) 0%, $accent 100%)
 			opacity: 0.7
 			transition: opacity 0.6s ease
 		img
@@ -724,7 +780,7 @@
 			text-transform: lowercase
 	&__title
 		display: block
-		color: rgba(#000, .5)
+		color: rgba($accent, .5)
 		font-size: 15px
 		font-weight: 400
 
@@ -758,7 +814,7 @@
 		left: 0
 		right: 0
 		bottom: 0
-		background: rgba(#000, .9)
+		background: rgba($accent, .9)
 	&__logo
 		display: block
 		max-width: 100%
@@ -790,7 +846,7 @@
 				background: $white
 				opacity: 0
 				transform: scaleX(0)
-				transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
+				transition: .3s cubic-bezier(0.5, 1, 0.89, 1)
 			&:hover
 				&:after
 					opacity: 1
@@ -821,7 +877,7 @@
 					background: $white
 					opacity: 0
 					transform: scaleX(0)
-					transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
+					transition: .3s cubic-bezier(0.5, 1, 0.89, 1)
 				&:hover
 					&:after
 						opacity: 1
@@ -901,7 +957,7 @@
 		&__title
 			max-width: 475px
 			margin-bottom: 0
-			color: #000
+			color: $accent
 			font-size: 42px
 			font-weight: 700
 			line-height: 1.16
@@ -1030,7 +1086,7 @@
 					background: $white
 					opacity: 0
 					transform: scaleX(0)
-					transition: .45s cubic-bezier(0.5, 1, 0.89, 1)
+					transition: .3s cubic-bezier(0.5, 1, 0.89, 1)
 				&:hover
 					color: $white
 					&:after
@@ -1108,29 +1164,264 @@
 
 
 
-@media (orientation:landscape) and (max-height: 450px)
-	.m-menu
-		&__close
-			top: 16px
-			left: auto
-			right: 30px
-		&__wrap
-			padding: 26px 30px 40px
-		&__languages
-			margin-bottom: 30px
-		&__nav
-			.nav
-				flex-direction: row
+// Page V-Academy
+.v-academy
+	.main-section
+		margin: 100px 0
+		+media-breakpoint-down(md)
+			margin: 80px 0
+		+media-breakpoint-down(sm)
+			margin: 60px 0
+
+	// Section: About
+	.about
+		+media-breakpoint-down(lg)
+			text-align: center
+		&__title
+			margin-bottom: 20px
+			color: $accent
+			font-size: 36px
+			font-weight: 700
+			line-height: 1.3
+			text-transform: none
+			+media-breakpoint-down(xl)
+				font-size: 32px
+			+media-breakpoint-down(md)
+				font-size: 28px
+			+media-breakpoint-down(xs)
+				font-size: 26px
+		&__descr
+			> p
+				margin-bottom: 10px
+				&:last-child
+					margin-bottom: 0
+		&__logos
+			display: flex
+			align-items: center
+			justify-content: space-between
+			height: 100%
+			+media-breakpoint-down(lg)
+				justify-content: center
+				margin-top: 20px
+			+media-breakpoint-down(md)
 				flex-wrap: wrap
-				li
+				> img
+					margin-bottom: 20px
+					max-width: 190px
+			> img
+				padding-left: 20px
+				padding-right: 20px
+				height: auto
+
+	// Section: Portfolio
+	.portfolio
+		.section-title
+			margin-bottom: 10px
+			text-transform: none
+		.section-descr
+			margin-bottom: 40px
+			+media-breakpoint-down(sm)
+				margin-bottom: 30px
+		&__gallery
+			display: flex
+			flex-wrap: wrap
+			margin: -10px
+		&__item
+			padding: 10px
+			> a
+				overflow: hidden
+				display: block
+				height: 270px
+				+media-breakpoint-down(sm)
+					height: 180px
+				+media-breakpoint-down(xs)
+					height: 140px
+				+media-breakpoint-down(xxs)
+					height: 120px
+				&:hover > img
+					transform: scale(1.1)
+				> img
+					width: 100%
+					height: 100%
+					object-fit: cover
+					transform: scale(1.01)
+					transition: transform .45s ease
+			&:nth-child(1),
+			&:nth-child(3),
+			&:nth-child(6),
+			&:nth-child(8)
+				flex: 0 0 25%
+				+media-breakpoint-down(md)
 					flex-basis: 50%
-					margin-top: 6px
-					padding-right: 10px
-					&:first-child
-						margin-top: 16px
-					a
-						font-size: 18px
-		&__footer
-			padding-top: 30px
-			.copy
+			&:nth-child(2),
+			&:nth-child(4),
+			&:nth-child(5),
+			&:nth-child(7)
+				flex: 0 0 50%
+
+	// Section: Author
+	.author
+		margin-bottom: 0
+		&__big-title
+			position: relative
+			.text
+				position: absolute
+				top: 0
+				left: 40px
+				bottom: 0
+				color: rgba($accent, 0.03)
+				font-size: 140px
+				font-weight: 800
+				line-height: 1
+				text-transform: uppercase
+				writing-mode: vertical-lr
+				text-align: center
+				transform-origin: center
+				transform: rotate(180deg)
+				+media-breakpoint-down(xl)
+					left: 20px
+				+media-breakpoint-down(lg)
+					font-size: 110px
+		&__title
+			display: inline-block
+			margin-bottom: 0
+			padding: 6px 12px
+			background-color: $accent
+			color: $white
+			font-size: 14px
+			font-weight: 400
+			line-height: 1
+		&__name
+			margin-top: 20px
+			color: $accent
+			font-size: 42px
+			font-weight: 700
+			line-height: 1.16
+			text-transform: uppercase
+			+media-breakpoint-down(xl)
+				font-size: 38px
+			+media-breakpoint-down(md)
+				font-size: 32px
+		&__achievement
+			margin-top: 20px
+		&__social
+			margin-top: 30px
+			+media-breakpoint-down(sm)
+				margin-top: 20px
+			> a
+				position: relative
+				display: inline-block
+				color: $accent
+				font-size: 18px
+				font-weight: 700
+				line-height: 1
+				&:not(:first-child)
+					margin-left: 30px
+				&:after
+					content: ''
+					position: absolute
+					top: 100%
+					left: 0
+					width: 100%
+					height: 1px
+					margin-top: 2px
+					background: $accent
+					opacity: 0
+					transform: scaleX(0)
+					transition: .3s cubic-bezier(0.5, 1, 0.89, 1)
+				&:hover
+					&:after
+						opacity: 1
+						transform: scaleX(1)
+		&__photo
+			+media-breakpoint-down(sm)
+				margin: 0 auto
+				max-width: 240px
+				margin-top: 40px
+
+	// Section: Education
+	.education
+		margin-top: 0
+		padding: 100px 0
+		background-color: #fafafa
+		+media-breakpoint-down(md)
+			padding: 80px 0
+		+media-breakpoint-down(sm)
+			padding: 60px 0
+		&__packages
+			display: flex
+			justify-content: space-between
+			margin-top: 60px
+			+media-breakpoint-down(md)
+				flex-wrap: wrap
+				margin-top: 40px
+		&__package
+			flex: 1 1 50%
+			padding: 50px
+			border: 1px solid $border
+			background-color: $white
+			+media-breakpoint-down(lg)
+				padding: 40px
+			+media-breakpoint-down(md)
+				flex-basis: 100%
+			+media-breakpoint-down(xs)
+				padding: 30px
+			+media-breakpoint-down(xxs)
+				padding: 25px
+			&:not(:last-child)
+				margin-right: 40px
+				+media-breakpoint-down(md)
+					margin-right: 0
+					margin-bottom: 40px
+				+media-breakpoint-down(xs)
+					margin-bottom: 20px
+			&--soon
+				display: flex
+				flex-direction: column
+				align-items: center
+				justify-content: center
+				text-align: center
+				+media-breakpoint-down(md)
+					padding-top: 60px
+					padding-bottom: 60px
+				+media-breakpoint-down(xs)
+					padding-top: 40px
+					padding-bottom: 40px
+				.education__title
+					margin-bottom: 20px
+					font-size: 24px
+					font-weight: 400
+					line-height: 1
+					+media-breakpoint-down(xs)
+						font-size: 20px
+				.education__soon
+					color: rgba($accent, 0.1)
+					font-size: 46px
+					font-weight: 700
+					line-height: 1
+					text-transform: uppercase
+					+media-breakpoint-down(xs)
+						font-size: 32px
+		&__title
+			margin-bottom: 20px
+		&__includes
+			margin-bottom: 0
+			> li
+				position: relative
+				padding-left: 28px
+				color: $accent
+				font-weight: 300
+				&:not(:last-child)
+					margin-bottom: 10px
+				&::before
+					content: ''
+					position: absolute
+					top: 6px
+					left: 0
+					width: 16px
+					height: 16px
+					background: url('../images/dest/check.svg') no-repeat center/16px
+		&__btn
+			margin-top: 30px
+			+media-breakpoint-down(xs)
 				margin-top: 20px

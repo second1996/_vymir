@@ -79,6 +79,13 @@ document.addEventListener("DOMContentLoaded", function() {
 		modal.find('#service-name, #service-title').val(serviceName)
 	});
 
+	$('#educationModal').on('show.bs.modal', function (event) {
+		var button = $(event.relatedTarget)
+		var packageName = button.data('package')
+		var modal = $(this)
+		modal.find('#package-title').val(packageName)
+	});
+
 	// Project Go back button
 	var didScroll;
 	var lastScrollTop = 0;

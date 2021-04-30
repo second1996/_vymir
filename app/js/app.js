@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		var button = $(event.relatedTarget)
 		var packageName = button.data('package')
 		var modal = $(this)
-		modal.find('#package-title').val(packageName)
+		modal.find('#package-name, #package-title').val(packageName)
 	});
 
 	// Project Go back button
